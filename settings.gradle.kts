@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Sample Compose Android"
-include ':app'
+include(":app")
