@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.SampleComposeAndroid" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="NightAdjusted.Theme.SampleComposeAndroid" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+    </style>
+
+    <style name="PlatformAdjusted.Theme.SampleComposeAndroid" parent="NightAdjusted.Theme.SampleComposeAndroid">
+        <item name="android:statusBarColor">@color/black30</item>
+    </style>
+
+    <!-- The final theme we use -->
+    <style name="Theme.SampleComposeAndroid" parent="PlatformAdjusted.Theme.SampleComposeAndroid" />
+
+    <style name="NightAdjusted.Theme.Splash" parent="Theme.SplashScreen">
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+    </style>
+
+    <style name="Theme.SampleComposeAndroid.Splash" parent="NightAdjusted.Theme.Splash">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash</item>
+        <item name="postSplashScreenTheme">@style/Theme.SampleComposeAndroid</item>
+    </style>
+
 </resources>
