@@ -51,20 +51,25 @@ class MainActivity : ComponentActivity() {
                 is MainActivityUiState.Success -> false
             }
         }
-
-        splashScreen.setOnExitAnimationListener { splashScreenViewProvider ->
-            // Get logo and start a fade out animation
-            splashScreenViewProvider.iconView
-                .animate()
-                .rotation(360f)
-                .setDuration(splashFadeDurationMillis)
-                .alpha(0f)
-                .withEndAction {
-                    // After the fade out, remove the
-                    // splash and set content view
-                    splashScreenViewProvider.remove()
-                    setContent()
-                }.start()
+        
+        // If the splash screen is still visible, set the content view
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S_V2) {
+            splashScreen.setOnExitAnimationListener { splashScreenViewProvider ->
+                // Get logo and start a fade out animation
+                splashScreenViewProvider.iconView
+                    .animate()
+                    .rotation(360f)
+                    .setDuration(splashFadeDurationMillis)
+                    .alpha(0f)
+                    .withEndAction {
+                        // After the fade out, remove the
+                        // splash and set content view
+                        splashScreenViewProvider.remove()
+                        setContent()
+                    }.start()
+            }
+        } else {
+            setContent()
         }
     }
     private fun setContent() {
