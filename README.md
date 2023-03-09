@@ -1,4 +1,4 @@
-[Test and Lint Badge]([https://github.com/loodos/SampleComposeAndroid/actions/workflows/testandlint.yml/badge.svg](https://github.com/aslansari/hypocoin/actions/workflows/testandlint.yml/badge.svg))
+![Test and Lint Badge](https://github.com/loodos/SampleComposeAndroid/actions/workflows/testandlint.yaml/badge.svg)
 
 # Sample Compose Application
 
