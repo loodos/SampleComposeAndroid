@@ -72,6 +72,7 @@ class MainActivity : ComponentActivity() {
             setContent()
         }
     }
+
     private fun setContent() {
         setContent {
             SampleComposeAndroidTheme {

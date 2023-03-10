@@ -82,4 +82,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     // lint
     lintChecks("com.slack.lint.compose:compose-lint-checks:1.0.1")
+    // compose state events
+    implementation("com.github.leonard-palm:compose-state-events:1.2.3")
 }
