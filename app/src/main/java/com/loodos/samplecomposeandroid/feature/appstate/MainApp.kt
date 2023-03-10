@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalComposeUiApi::class)
+
 package com.loodos.samplecomposeandroid.feature.appstate
 
 import androidx.compose.material3.*
@@ -25,8 +27,9 @@ import com.loodos.samplecomposeandroid.feature.navigation.MainNavHost
 @Composable
 fun MainApp(
     networkMonitor: NetworkMonitor,
+    modifier: Modifier = Modifier,
     appState: MainAppState = rememberMainAppState(
-        networkMonitor = networkMonitor
+        networkMonitor = networkMonitor,
     ),
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
@@ -41,7 +44,7 @@ fun MainApp(
     }
 
     MainAppScaffold(
-        modifier = Modifier.semantics {
+        modifier = modifier.semantics {
             testTagsAsResourceId = true
         },
         backgroundColor = MaterialTheme.colorScheme.background,
