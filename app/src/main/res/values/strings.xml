@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Sample Compose Android</string>
+    <string name="not_network_connected">Not network connected!</string>
 </resources>
