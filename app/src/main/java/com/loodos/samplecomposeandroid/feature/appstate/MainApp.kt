@@ -53,7 +53,6 @@ fun MainApp(
         ) {
         MainNavHost(
             navController = appState.navController,
-            onBackClick = appState::onBackClick
         )
     }
 }
