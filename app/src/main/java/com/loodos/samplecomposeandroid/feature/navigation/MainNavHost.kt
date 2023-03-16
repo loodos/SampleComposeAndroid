@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.loodos.samplecomposeandroid.feature.home.navigation.homeNavigationRoute
-import com.loodos.samplecomposeandroid.feature.home.navigation.homeRoute
+import com.loodos.samplecomposeandroid.feature.home.navigation.homeScreen
 
 /**
  * Created by mertcantoptas on 10.03.2023
@@ -21,6 +21,6 @@ fun MainNavHost(
         navController = navController,
         startDestination = startDestination,
     ) {
-        homeRoute(modifier = modifier)
+        homeScreen()
     }
 }
