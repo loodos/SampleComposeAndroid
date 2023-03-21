@@ -85,4 +85,26 @@ dependencies {
     lintChecks("com.slack.lint.compose:compose-lint-checks:1.0.1")
     // compose state events
     implementation("com.github.leonard-palm:compose-state-events:1.2.3")
+
+
+    testImplementation("app.cash.turbine:turbine:0.12.1")
+    testImplementation(" com.google.truth:truth:1.1.3")
+
+    // To use the androidx.test.core APIs
+    androidTestImplementation("androidx.test:core:1.5.0")
+    // Kotlin extensions for androidx.test.core
+    androidTestImplementation("androidx.test:core-ktx:1.5.0")
+
+    // To use the JUnit Extension APIs
+    testImplementation("androidx.test.ext:junit:1.1.5")
+    // Kotlin extensions for androidx.test.ext.junit
+    testImplementation("androidx.test.ext:junit-ktx:1.1.5")
+
+    // To use the Truth Extension APIs
+    testImplementation("androidx.test.ext:truth:1.5.0")
+
+    implementation( "org.jetbrains.kotlin:kotlin-test:1.8.0")
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    implementation("androidx.navigation:navigation-testing:2.5.3")
+
 }
