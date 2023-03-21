@@ -88,7 +88,7 @@ dependencies {
 
 
     testImplementation("app.cash.turbine:turbine:0.12.1")
-    testImplementation(" com.google.truth:truth:1.1.3")
+    testImplementation("com.google.truth:truth:1.1.3")
 
     // To use the androidx.test.core APIs
     androidTestImplementation("androidx.test:core:1.5.0")
@@ -103,7 +103,7 @@ dependencies {
     // To use the Truth Extension APIs
     testImplementation("androidx.test.ext:truth:1.5.0")
 
-    implementation( "org.jetbrains.kotlin:kotlin-test:1.8.0")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.8.0")
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     implementation("androidx.navigation:navigation-testing:2.5.3")
 
