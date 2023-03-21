@@ -65,6 +65,7 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0")
 
     //Splash
     implementation("androidx.core:core-splashscreen:1.0.0")
@@ -82,4 +83,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     // lint
     lintChecks("com.slack.lint.compose:compose-lint-checks:1.0.1")
+    // compose state events
+    implementation("com.github.leonard-palm:compose-state-events:1.2.3")
 }
