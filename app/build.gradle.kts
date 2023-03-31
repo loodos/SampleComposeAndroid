@@ -55,56 +55,56 @@ android {
 }
 
 dependencies {
-    val composeBom = platform("androidx.compose:compose-bom:2023.01.00")
+    val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation("androidx.activity:activity-compose")
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.0")
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.ui)
+
+    implementation(libs.androidx.compose.material3)
+
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    debugImplementation(libs.androidx.compose.ui.testManifest)
+
+    implementation(libs.androidx.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
 
     //Splash
-    implementation("androidx.core:core-splashscreen:1.0.0")
+    implementation(libs.androidx.core.splashscreen)
 
     //Hilt
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-compiler:2.45")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
     // lint
-    lintChecks("com.slack.lint.compose:compose-lint-checks:1.0.1")
+    lintChecks(libs.lint.checks)
     // compose state events
-    implementation("com.github.leonard-palm:compose-state-events:1.2.3")
+    implementation(libs.compose.state.events)
 
-
-    testImplementation("app.cash.turbine:turbine:0.12.1")
-    testImplementation("com.google.truth:truth:1.1.3")
+    testImplementation(libs.turbine)
+    testImplementation(libs.truth)
 
     // To use the androidx.test.core APIs
-    androidTestImplementation("androidx.test:core:1.5.0")
+    androidTestImplementation(libs.androidx.test.core)
     // Kotlin extensions for androidx.test.core
-    androidTestImplementation("androidx.test:core-ktx:1.5.0")
+    androidTestImplementation(libs.androidx.test.ktx)
 
     // To use the JUnit Extension APIs
-    testImplementation("androidx.test.ext:junit:1.1.5")
+    testImplementation(libs.androidx.test.ext)
     // Kotlin extensions for androidx.test.ext.junit
-    testImplementation("androidx.test.ext:junit-ktx:1.1.5")
+    testImplementation(libs.androidx.test.ext.ktx)
 
     // To use the Truth Extension APIs
-    testImplementation("androidx.test.ext:truth:1.5.0")
-
-    implementation("org.jetbrains.kotlin:kotlin-test:1.8.0")
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
-    implementation("androidx.navigation:navigation-testing:2.5.3")
+    testImplementation(libs.truth.ext)
+    testImplementation(libs.jetbrains.kotlin.test)
+    implementation(libs.androidx.navigation.testing)
+    testImplementation(libs.junit4)
+    androidTestImplementation(libs.androidx.test.ext)
+    androidTestImplementation(libs.androidx.test.espresso.core)
+    androidTestImplementation(libs.androidx.compose.ui.test)
 
 }
