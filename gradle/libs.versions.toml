@@ -12,7 +12,7 @@ androidxComposeBom = "2023.03.00"
 hilt = "2.45"
 hiltPlugin = "2.44.2"
 hiltNavigationCompose = "1.0.0"
-composeLintChecks = "1.0.0-alpha07"
+composeLintChecks = "1.0.1"
 composeStateEvents = "1.2.3"
 turbine = "0.12.1"
 truth = "1.1.3"
@@ -47,8 +47,8 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.r
 lint-checks = { group = "com.slack.lint.compose", name = "compose-lint-checks", version.ref = "composeLintChecks" }
 compose-state-events = { group = "com.github.leonard-palm", name = "compose-state-events", version.ref = "composeStateEvents" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
-truth = { group = "com.google.truth", name = "truth", version = "truth" }
-truth-ext = { group = "androidx.test.ext", name = "truth", version = "truthExt" }
+truth = { group = "com.google.truth", name = "truth", version.ref= "truth" }
+truth-ext = { group = "androidx.test.ext", name = "truth", version.ref = "truthExt" }
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 jetbrains-kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" }
 jetbrains-kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlinTest" }
