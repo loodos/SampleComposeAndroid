@@ -7,16 +7,22 @@ on:
       - synchronize
 
 jobs:
-  auto-assign:
+  auto_assign_reviewers:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Auto Assign Reviewers
-        uses: peter-evans/auto-assign-reviewers@v1
+      - name: Assign Reviewers
+        uses: actions/github-script@v5
         with:
+          script: |
+            const { repo, pull_request: { number } } = context;
+            await github.request('POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers', {
+              owner: repo.owner,
+              repo: repo.repo,
+              pull_number: number,
+              reviewers: ["ahmeterloodos", "merttoptas", "aslansariloodos"]
+            });
           token: ${{ secrets.GITHUB_TOKEN }}
-          reviewers: ahmeterloodos,merttoptas,aslansariloodos
+
 
 
 
