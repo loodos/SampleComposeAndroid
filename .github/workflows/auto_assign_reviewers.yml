@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Assign Reviewers
-      uses: pullreminders/assign-reviewers-action@v1.0.6
+      uses: kentaro-m/auto-assign-action@v1.2.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
