@@ -14,15 +14,13 @@ jobs:
         uses: actions/github-script@v5
         with:
           script: |
-            const { repo, pull_request: { number } } = context;
-            await github.request('POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers', {
+            const repo = context.repo;
+            const prNumber = context.payload.pull_request.number;
+            await github.rest.pulls.requestReviewers({
               owner: repo.owner,
               repo: repo.repo,
-              pull_number: number,
-              reviewers: ["ahmeterloodos", "merttoptas", "aslansariloodos"]
+              pull_number: prNumber,
+             reviewers: ["ahmeterloodos", "merttoptas", "aslansariloodos"]
             });
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-
-
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
