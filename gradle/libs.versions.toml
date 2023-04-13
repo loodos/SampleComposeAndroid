@@ -1,14 +1,15 @@
 [versions]
-androidxCore = "1.9.0"
+androidxCore = "1.10.0"
 androidxTestCore = "1.5.0"
 androidxLifecycle = "2.6.1"
 androidGradlePlugin = "7.4.0"
-androidxActivity = "1.6.1"
+androidxActivity = "1.7.0"
 androidxCoreSplashscreen = "1.0.0"
 androidxTestExt = "1.1.5"
 androidxNavigation = "2.5.3"
 androidxEspresso = "3.5.1"
-androidxComposeBom = "2023.03.00"
+androidxComposeBom = "2023.04.00"
+chucker = "3.5.2"
 hilt = "2.45"
 hiltPlugin = "2.44.2"
 hiltNavigationCompose = "1.0.0"
@@ -18,8 +19,10 @@ turbine = "0.12.1"
 truth = "1.1.3"
 junit4 = "4.13.2"
 truthExt = "1.5.0"
-kotlinTest = "1.6.0"
+kotlinTest = "1.8.10"
 kotlin = "1.8.10"
+retrofit = "2.9.0"
+okhttp = "4.10.0"
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
@@ -41,10 +44,16 @@ androidx-test-ext-ktx = { group = "androidx.test.ext", name = "junit-ktx", versi
 androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExt" }
 androidx-compose-ui-test = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidxTestCore" }
+chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
+chucker-no-op = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "chucker" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 lint-checks = { group = "com.slack.lint.compose", name = "compose-lint-checks", version.ref = "composeLintChecks" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 compose-state-events = { group = "com.github.leonard-palm", name = "compose-state-events", version.ref = "composeStateEvents" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 truth = { group = "com.google.truth", name = "truth", version.ref= "truth" }
