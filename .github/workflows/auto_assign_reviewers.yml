@@ -1,16 +1,22 @@
 name: Auto Assign Reviewers
 
 on:
-  pull_request_target:
-    types: [opened, reopened]
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 jobs:
-  auto_assign_reviewers:
+  auto-assign:
     runs-on: ubuntu-latest
     steps:
-      - name: Assign Reviewers
-        uses: kentaro-m/auto-assign-action@v1.2.0
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Auto Assign Reviewers
+        uses: peter-evans/auto-assign-reviewers@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: ahmeterloodos,merttoptas,aslansariloodos
+
 
 
