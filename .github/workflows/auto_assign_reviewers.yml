@@ -2,15 +2,14 @@ name: Auto Assign Reviewers
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
 
 jobs:
   auto_assign_reviewers:
     runs-on: ubuntu-latest
     steps:
-    - name: Assign Reviewers
-      uses: kentaro-m/auto-assign-action@v1.2.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        reviewers: "aslansariloodos,merttoptas,ahmeterloodos"
+      - name: Assign Reviewers
+        uses: kentaro-m/auto-assign-action@v1.2.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
