@@ -17,7 +17,7 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
+        flavorDimensions("version")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -36,7 +36,6 @@ android {
         }
 
         getByName("debug") {
-            applicationIdSuffix = ".debug"
             isMinifyEnabled = false
             isDebuggable = true
             isShrinkResources = false
@@ -45,6 +44,25 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+
+    productFlavors {
+        create("dev") {
+            dimension = "version"
+            applicationIdSuffix = ".dev"
+            versionNameSuffix = "-dev"
+            resValue("string", "app_name", "Sample Compose Android Dev")
+            buildConfigField("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
+
+        }
+        create("prod") {
+            dimension = "version"
+            applicationIdSuffix = ".prod"
+            versionNameSuffix = "-prod"
+            resValue("string", "app_name", "Sample Compose Android")
+            buildConfigField("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
+
         }
     }
 
@@ -101,6 +119,17 @@ dependencies {
     lintChecks(libs.lint.checks)
     // compose state events
     implementation(libs.compose.state.events)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging.interceptor)
+
+    // chucker
+    debugImplementation(libs.chucker)
+    releaseImplementation(libs.chucker.no.op)
+
 
     testImplementation(libs.turbine)
     testImplementation(libs.truth)
