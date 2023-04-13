@@ -1,0 +1,16 @@
+name: Auto Assign Reviewers
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  auto_assign_reviewers:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Assign Reviewers
+      uses: pullreminders/assign-reviewers-action@v1.0.6
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        reviewers: "aslansariloodos,merttoptas,ahmeterloodos"
