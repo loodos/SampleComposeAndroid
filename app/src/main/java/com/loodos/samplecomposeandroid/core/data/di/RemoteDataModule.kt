@@ -5,6 +5,7 @@ import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
 import com.loodos.samplecomposeandroid.BuildConfig
+import com.loodos.samplecomposeandroid.core.data.remote.api.AuthenticationService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -76,4 +77,10 @@ object RemoteDataModule {
             // Allows to customize the retention period of collected data
             retentionPeriod = RetentionManager.Period.ONE_HOUR
         )
+
+
+    @Provides
+    fun provideLoginService(retrofit: Retrofit): AuthenticationService {
+        return retrofit.create(AuthenticationService::class.java)
+    }
 }
