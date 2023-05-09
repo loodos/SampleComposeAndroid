@@ -40,7 +40,6 @@ object RemoteDataModule {
     fun provideOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
         chuckInterceptor: ChuckerInterceptor,
-
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
@@ -52,6 +51,11 @@ object RemoteDataModule {
     @Provides
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)
+    }
+    @Singleton
+    @Provides
+    fun provideGsonConverterFactory(): GsonConverterFactory {
+        return GsonConverterFactory.create()
     }
 
     @Singleton
@@ -80,6 +84,7 @@ object RemoteDataModule {
 
 
     @Provides
+    @Singleton
     fun provideLoginService(retrofit: Retrofit): AuthenticationService {
         return retrofit.create(AuthenticationService::class.java)
     }
