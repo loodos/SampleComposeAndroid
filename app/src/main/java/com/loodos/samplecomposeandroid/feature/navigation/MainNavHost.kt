@@ -4,7 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.loodos.samplecomposeandroid.feature.home.navigation.homeNavigationRoute
+import com.loodos.samplecomposeandroid.feature.category.navigation.categoryNavigationRoute
+import com.loodos.samplecomposeandroid.feature.category.navigation.categoryScreen
 import com.loodos.samplecomposeandroid.feature.home.navigation.homeScreen
 
 /**
@@ -15,12 +16,13 @@ import com.loodos.samplecomposeandroid.feature.home.navigation.homeScreen
 fun MainNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = homeNavigationRoute
+    startDestination: String = categoryNavigationRoute
 ) {
     NavHost(
         navController = navController,
         startDestination = startDestination,
     ) {
         homeScreen()
+        categoryScreen()
     }
 }

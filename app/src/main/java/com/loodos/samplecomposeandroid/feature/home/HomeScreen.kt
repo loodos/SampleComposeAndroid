@@ -9,9 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
-import com.loodos.samplecomposeandroid.feature.home.navigation.homeNavigationRoute
 import com.loodos.samplecomposeandroid.ui.components.MainAppScaffold
 
 /**
