@@ -24,6 +24,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RemoteDataModule {
+
+    private const val CHUCKER_MAX_CONTENT_LENGTH = 250_000L
+
     @Provides
     @Singleton
     fun provideRetrofit(
@@ -52,6 +55,7 @@ object RemoteDataModule {
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
         setLevel(HttpLoggingInterceptor.Level.BODY)
     }
+
     @Singleton
     @Provides
     fun provideGsonConverterFactory(): GsonConverterFactory {
@@ -64,9 +68,8 @@ object RemoteDataModule {
         @ApplicationContext context: Context,
         chuckerCollector: ChuckerCollector,
     ): ChuckerInterceptor {
-
         return ChuckerInterceptor.Builder(context).collector(chuckerCollector)
-            .maxContentLength(250_000L)
+            .maxContentLength(CHUCKER_MAX_CONTENT_LENGTH)
             .redactHeaders("Content-Type", "application/json")
             .alwaysReadResponseBody(true).build()
     }
@@ -79,9 +82,8 @@ object RemoteDataModule {
             // Toggles visibility of the push notification
             showNotification = true,
             // Allows to customize the retention period of collected data
-            retentionPeriod = RetentionManager.Period.ONE_HOUR
+            retentionPeriod = RetentionManager.Period.ONE_HOUR,
         )
-
 
     @Provides
     @Singleton

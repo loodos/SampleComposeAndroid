@@ -4,12 +4,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 /**
  * Created by mertcantoptas on 07.03.2023
  */
+private const val MainDelay = 1000L
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor() : ViewModel() {
@@ -17,14 +22,14 @@ class MainActivityViewModel @Inject constructor() : ViewModel() {
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(5_000),
-            initialValue = MainActivityUiState.Loading
+            initialValue = MainActivityUiState.Loading,
         )
 }
 
 private fun mainUiState(): Flow<MainActivityUiState> {
     return flow {
         emit(MainActivityUiState.Loading)
-        delay(1000)
+        delay(MainDelay)
         emit(MainActivityUiState.Success)
     }
 }

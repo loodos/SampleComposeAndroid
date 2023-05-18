@@ -34,6 +34,7 @@ class MainActivity : ComponentActivity() {
 
     companion object {
         const val splashFadeDurationMillis = 1000L
+        const val splashIconRotation = 360f
     }
 
     private val viewModel: MainActivityViewModel by viewModels()
@@ -66,7 +67,7 @@ class MainActivity : ComponentActivity() {
                 // Get logo and start a fade out animation
                 splashScreenViewProvider.iconView
                     .animate()
-                    .rotation(360f)
+                    .rotation(splashIconRotation)
                     .setDuration(splashFadeDurationMillis)
                     .alpha(0f)
                     .withEndAction {

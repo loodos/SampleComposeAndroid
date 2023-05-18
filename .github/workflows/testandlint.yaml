@@ -26,11 +26,6 @@ jobs:
           java-version: 11
       - name: Unit tests
         run: bash ./gradlew test --stacktrace
-      - name: Unit tests results
-        uses: actions/upload-artifact@v1
-        with:
-          name: unit-tests-results
-          path: app/build/reports/tests/testDebugUnitTest/index.html
 
   lint:
     name: Lint Check
@@ -45,8 +40,8 @@ jobs:
           java-version: 11
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-      - name: Lint debug flavor
-        run: ./gradlew lint --stacktrace
+      - name: Lint Checks
+        run: ./gradlew detektAll lintKotlin lint
       - name: Lint results
         uses: yutailang0119/action-android-lint@v2
         with:

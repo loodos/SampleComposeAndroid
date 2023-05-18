@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.Color
  * Created by mertcantoptas on 10.03.2023
  */
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainAppScaffold(

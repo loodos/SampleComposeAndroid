@@ -22,7 +22,7 @@ import kotlinx.coroutines.flow.stateIn
 fun rememberMainAppState(
     networkMonitor: NetworkMonitor,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
 ): MainAppState {
     return remember(navController, coroutineScope, networkMonitor) {
         MainAppState(navController, coroutineScope, networkMonitor)
@@ -39,13 +39,12 @@ class MainAppState(
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
 
-
     val isOffline = networkMonitor.isOnline
         .map(Boolean::not)
         .stateIn(
             scope = coroutineScope,
             started = SharingStarted.WhileSubscribed(5_000),
-            initialValue = false
+            initialValue = false,
         )
 
     fun onBackClick() {

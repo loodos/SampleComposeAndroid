@@ -21,5 +21,3 @@ abstract class BaseViewModel<State : IViewState> : ViewModel() {
         _uiState.update { currentState.reduce() }
     }
 }
-
-

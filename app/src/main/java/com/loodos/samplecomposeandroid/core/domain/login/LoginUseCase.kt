@@ -6,12 +6,12 @@ import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class LoginUseCase @Inject constructor(
-    private val authenticationRepository: AuthenticationRepository
+    private val authenticationRepository: AuthenticationRepository,
 ) {
-    operator fun invoke(username: String, password: String) : Flow<LoginResult> {
+    operator fun invoke(username: String, password: String): Flow<LoginResult> {
         return flow {
             val result = authenticationRepository.login(username, password)
-            (result.getOrNull() ?: throw Exception("error message")).also {
+            (result.getOrNull() ?: throw IllegalArgumentException("error message")).also {
                 emit(it.toModel())
             }
         }

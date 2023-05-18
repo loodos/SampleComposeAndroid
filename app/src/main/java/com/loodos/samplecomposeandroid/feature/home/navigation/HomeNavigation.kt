@@ -9,14 +9,14 @@ import com.loodos.samplecomposeandroid.feature.home.HomeScreenRoute
 /**
  * Created by mertcantoptas on 10.03.2023
  */
-const val homeNavigationRoute = "home_route"
+const val HomeNavigationRoute = "home_route"
 
 fun NavController.navigateHomeScreen(navOptions: NavOptions? = null) {
-    this.navigate(homeNavigationRoute, navOptions)
+    this.navigate(HomeNavigationRoute, navOptions)
 }
 
 fun NavGraphBuilder.homeScreen() {
-    composable(route = homeNavigationRoute) {
+    composable(route = HomeNavigationRoute) {
         HomeScreenRoute()
     }
 }

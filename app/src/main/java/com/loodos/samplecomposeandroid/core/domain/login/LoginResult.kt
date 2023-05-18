@@ -6,6 +6,6 @@ data class LoginResult(
     val token: String = "",
 )
 
-fun LoginResponse.toModel() : LoginResult {
+fun LoginResponse.toModel(): LoginResult {
     return LoginResult(this.token)
 }

@@ -16,4 +16,5 @@ class HomeViewModel @Inject constructor() : BaseViewModel<HomeUiState>() {
 
 data class HomeUiState(
     val isLoading: Boolean = false,
+    val title: String = "Home",
 ) : IViewState

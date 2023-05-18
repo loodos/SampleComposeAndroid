@@ -35,7 +35,6 @@ class MainAppStateTest {
     // Subject under test.
     private lateinit var state: MainAppState
 
-
     @Test
     fun mainAppState_currentDestination() = runTest {
         var currentDestination: String? = null
@@ -46,7 +45,7 @@ class MainAppStateTest {
                 MainAppState(
                     navController = navController,
                     networkMonitor = networkMonitor,
-                    coroutineScope = backgroundScope
+                    coroutineScope = backgroundScope,
                 )
             }
 
@@ -63,7 +62,6 @@ class MainAppStateTest {
         assertEquals("b", currentDestination)
     }
 
-
     @Test
     fun mainAppState_stateIsOfflineWhenNetworkMonitorIsOffline() =
         runTest(UnconfinedTestDispatcher()) {
@@ -71,7 +69,7 @@ class MainAppStateTest {
                 state = MainAppState(
                     navController = NavHostController(LocalContext.current),
                     networkMonitor = networkMonitor,
-                    coroutineScope = backgroundScope
+                    coroutineScope = backgroundScope,
                 )
             }
             backgroundScope.launch { state.isOffline.collect() }
@@ -86,7 +84,7 @@ class MainAppStateTest {
                 state = MainAppState(
                     navController = NavHostController(LocalContext.current),
                     networkMonitor = networkMonitor,
-                    coroutineScope = backgroundScope
+                    coroutineScope = backgroundScope,
                 )
             }
             backgroundScope.launch { state.isOffline.collect() }

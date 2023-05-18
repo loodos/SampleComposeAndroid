@@ -12,6 +12,8 @@ androidxComposeBom = "2023.04.00"
 chucker = "3.5.2"
 hilt = "2.45"
 hiltPlugin = "2.44.2"
+detektGradlePlugin = "1.22.0"
+kotlinterGradlePlugin = "3.14.0"
 hiltNavigationCompose = "1.0.0"
 composeLintChecks = "1.0.1"
 composeStateEvents = "1.2.3"
@@ -56,7 +58,7 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 compose-state-events = { group = "com.github.leonard-palm", name = "compose-state-events", version.ref = "composeStateEvents" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
-truth = { group = "com.google.truth", name = "truth", version.ref= "truth" }
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 truth-ext = { group = "androidx.test.ext", name = "truth", version.ref = "truthExt" }
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 jetbrains-kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" }
@@ -68,3 +70,5 @@ android-library = { id = "com.android.library", version.ref = "androidGradlePlug
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltPlugin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
+kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinterGradlePlugin" }

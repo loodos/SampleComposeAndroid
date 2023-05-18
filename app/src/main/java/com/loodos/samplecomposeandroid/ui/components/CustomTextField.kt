@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.loodos.samplecomposeandroid.ui.components
 
 import androidx.compose.foundation.Image
@@ -6,7 +8,12 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material3.*
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldColors
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -20,7 +27,6 @@ import com.loodos.samplecomposeandroid.R
  * Created by mertcantoptas on 10.05.2023
  */
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomTextField(
     value: String,
@@ -63,7 +69,7 @@ private fun CustomTextFieldPreview() {
         onValueChange = {},
         label = { Text(text = "Label") },
         placeholder = { Text(text = "Placeholder") },
-        trailingIcon = { Icon(Icons.Filled.Favorite, contentDescription = null) }
+        trailingIcon = { Icon(Icons.Filled.Favorite, contentDescription = null) },
     )
 }
 
@@ -80,7 +86,7 @@ private fun CustomTextFieldFillTextPreview() {
             Image(
                 modifier = Modifier.size(24.dp),
                 imageVector = ImageVector.vectorResource(id = R.drawable.ic_cancel),
-                contentDescription = ""
+                contentDescription = "",
             )
         },
         supportingText = { Text(text = "Supporting Text") },

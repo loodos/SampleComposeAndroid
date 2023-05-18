@@ -2,11 +2,10 @@ package com.loodos.samplecomposeandroid.core.data.repository
 
 import com.loodos.samplecomposeandroid.core.data.model.login.LoginResponse
 import com.loodos.samplecomposeandroid.core.data.remote.source.AuthenticationRemoteDataSource
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class AuthenticationRepositoryImpl @Inject constructor(
-    private val authenticationRemoteDataSource: AuthenticationRemoteDataSource
+    private val authenticationRemoteDataSource: AuthenticationRemoteDataSource,
 ) : AuthenticationRepository {
 
     override suspend fun login(username: String, password: String): Result<LoginResponse> {
