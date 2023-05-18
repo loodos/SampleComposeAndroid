@@ -1,6 +1,7 @@
 package com.loodos.samplecomposeandroid.ui.components
 
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -31,7 +32,7 @@ fun MainAppScaffold(
     Scaffold(
         modifier = modifier
             .statusBarsPadding()
-            .navigationBarsPadding(),
+            .navigationBarsPadding().imePadding(),
         topBar = topBar,
         content = content,
         bottomBar = bottomBar,
