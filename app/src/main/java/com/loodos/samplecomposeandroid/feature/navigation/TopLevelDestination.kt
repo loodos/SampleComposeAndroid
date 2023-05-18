@@ -1,9 +1,9 @@
 package com.loodos.samplecomposeandroid.feature.navigation
 
 import com.loodos.samplecomposeandroid.R
-import com.loodos.samplecomposeandroid.core.designsystem.AppIcons
-import com.loodos.samplecomposeandroid.core.designsystem.Icon
-import com.loodos.samplecomposeandroid.core.designsystem.Icon.ImageVectorIcon
+import com.loodos.samplecomposeandroid.core.designsystem.icon.AppIcons
+import com.loodos.samplecomposeandroid.core.designsystem.icon.Icon
+import com.loodos.samplecomposeandroid.core.designsystem.icon.Icon.ImageVectorIcon
 import com.loodos.samplecomposeandroid.feature.category.CategoryRoute
 import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
 import com.loodos.samplecomposeandroid.feature.profile.ProfileRoute
@@ -31,5 +31,5 @@ enum class TopLevelDestination(
         selectedIcon = ImageVectorIcon(AppIcons.Person),
         unselectedIcon = ImageVectorIcon(AppIcons.PersonOutlined),
         titleTextId = R.string.nav_profile_title,
-        ),
+    ),
 }

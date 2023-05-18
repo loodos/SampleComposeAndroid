@@ -25,6 +25,8 @@ kotlinTest = "1.8.21"
 kotlin = "1.8.21"
 retrofit = "2.9.0"
 okhttp = "4.10.0"
+appcompat = "1.6.1"
+material = "1.9.0"
 
 [libraries]
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
@@ -64,6 +66,8 @@ truth-ext = { group = "androidx.test.ext", name = "truth", version.ref = "truthE
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 jetbrains-kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlinTest" }
 jetbrains-kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlinTest" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

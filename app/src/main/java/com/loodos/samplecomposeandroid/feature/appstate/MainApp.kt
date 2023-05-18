@@ -3,11 +3,6 @@
 package com.loodos.samplecomposeandroid.feature.appstate
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -31,7 +26,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import com.loodos.samplecomposeandroid.R
-import com.loodos.samplecomposeandroid.core.designsystem.Icon
+import com.loodos.samplecomposeandroid.core.designsystem.icon.Icon
+import com.loodos.samplecomposeandroid.core.designsystem.slideIn
+import com.loodos.samplecomposeandroid.core.designsystem.slideOut
 import com.loodos.samplecomposeandroid.core.util.NetworkMonitor
 import com.loodos.samplecomposeandroid.feature.navigation.MainNavHost
 import com.loodos.samplecomposeandroid.feature.navigation.TopLevelDestination
@@ -71,14 +68,8 @@ fun MainApp(
         bottomBar = {
             AnimatedVisibility(
                 visible = appState.shouldShowBottomBar,
-                enter = fadeIn() + slideInVertically(
-                    initialOffsetY = { 200 },
-                    animationSpec = tween(200),
-                ),
-                exit = fadeOut() + slideOutVertically(
-                    targetOffsetY = { 200 },
-                    animationSpec = tween(200),
-                ),
+                enter = slideIn,
+                exit = slideOut,
             ) {
                 AppNavBar(
                     destinations = AppDestinations(appState.topLevelDestinations),

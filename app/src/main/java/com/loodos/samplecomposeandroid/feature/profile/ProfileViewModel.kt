@@ -13,4 +13,5 @@ class ProfileViewModel @Inject constructor() : BaseViewModel<ProfileViewState>()
 
 data class ProfileViewState(
     val loading: Boolean = false,
+    val title: String = "Profile",
 ) : IViewState

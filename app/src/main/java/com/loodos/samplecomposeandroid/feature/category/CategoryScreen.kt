@@ -25,6 +25,6 @@ fun CategoryScreen(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier) {
-        Text(text = "Category")
+        Text(text = uiState.title)
     }
 }

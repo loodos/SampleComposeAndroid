@@ -25,6 +25,6 @@ fun ProfileScreen(
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier) {
-        Text(text = "Profile")
+        Text(text = uiState.title)
     }
 }

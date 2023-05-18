@@ -13,4 +13,5 @@ class CategoryViewModel @Inject constructor() : BaseViewModel<CategoryViewState>
 
 data class CategoryViewState(
     val loading: Boolean = false,
+    val title: String = "Category",
 ) : IViewState

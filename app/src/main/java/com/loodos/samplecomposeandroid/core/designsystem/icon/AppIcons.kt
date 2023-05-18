@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.core.designsystem
+package com.loodos.samplecomposeandroid.core.designsystem.icon
 
 import androidx.annotation.DrawableRes
 import androidx.compose.material.icons.Icons
