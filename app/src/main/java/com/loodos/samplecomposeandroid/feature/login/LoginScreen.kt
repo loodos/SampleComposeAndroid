@@ -45,11 +45,10 @@ internal fun LoginScreenRoute(
 
     EventEffect(
         event = loginUIState.navigateToHome,
-        onConsumed = viewModel::onConsumeSingleEvent
-    ) {
-        navigateToHome()
-    }
-    LocalContext.current
+        onConsumed = viewModel::onConsumeSingleEvent,
+        action =   navigateToHome
+    )
+
     LoginScreen(
         loginUIState,
         modifier = modifier,

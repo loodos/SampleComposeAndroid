@@ -24,17 +24,17 @@ import com.loodos.samplecomposeandroid.R
 @Composable
 fun CustomTextField(
     value: String,
-    label : @Composable (() -> Unit),
+    label: @Composable (() -> Unit),
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
     colors: TextFieldColors = TextFieldDefaults.outlinedTextFieldColors(),
     enabled: Boolean = true,
     trailingIcon: @Composable (() -> Unit)? = null,
     placeholder: @Composable (() -> Unit)? = null,
-    supportingText : @Composable (() -> Unit)? = null,
-    isError : Boolean = false,
+    supportingText: @Composable (() -> Unit)? = null,
+    isError: Boolean = false,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
-    keyboardActions : KeyboardActions = KeyboardActions.Default,
+    keyboardActions: KeyboardActions = KeyboardActions.Default,
     visualTransformation: VisualTransformation = VisualTransformation.None,
 ) {
     OutlinedTextField(
@@ -57,7 +57,7 @@ fun CustomTextField(
 
 @Composable
 @Preview(showBackground = true)
-fun CustomTextFieldPreview() {
+private fun CustomTextFieldPreview() {
     CustomTextField(
         value = "",
         onValueChange = {},
@@ -69,7 +69,7 @@ fun CustomTextFieldPreview() {
 
 @Composable
 @Preview(showBackground = true)
-fun CustomTextFieldFillTextPreview() {
+private fun CustomTextFieldFillTextPreview() {
     CustomTextField(
         value = "Loodos Compose",
         onValueChange = {},
