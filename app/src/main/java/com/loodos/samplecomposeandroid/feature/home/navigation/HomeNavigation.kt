@@ -11,7 +11,7 @@ import com.loodos.samplecomposeandroid.feature.home.HomeScreenRoute
  */
 const val HomeNavigationRoute = "home_route"
 
-fun NavController.navigateHomeScreen(navOptions: NavOptions? = null) {
+fun NavController.navigateToHome(navOptions: NavOptions? = null) {
     this.navigate(HomeNavigationRoute, navOptions)
 }
 
