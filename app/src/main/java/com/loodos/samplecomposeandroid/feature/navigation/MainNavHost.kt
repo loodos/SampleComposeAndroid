@@ -5,10 +5,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
-import com.loodos.samplecomposeandroid.feature.home.navigation.homeNavigationRoute
+import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
 import com.loodos.samplecomposeandroid.feature.home.navigation.homeScreen
 import com.loodos.samplecomposeandroid.feature.home.navigation.navigateHomeScreen
-import com.loodos.samplecomposeandroid.feature.login.navigation.loginNavigationRoute
+import com.loodos.samplecomposeandroid.feature.login.navigation.LoginNavigationRoute
 import com.loodos.samplecomposeandroid.feature.login.navigation.loginScreen
 
 /**
@@ -19,9 +19,10 @@ import com.loodos.samplecomposeandroid.feature.login.navigation.loginScreen
 fun MainNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = loginNavigationRoute
+    startDestination: String = LoginNavigationRoute,
 ) {
     NavHost(
+        modifier = modifier,
         navController = navController,
         startDestination = startDestination,
     ) {
@@ -30,8 +31,8 @@ fun MainNavHost(
             navController.navigateHomeScreen(
                 navOptions =
                 NavOptions.Builder()
-                    .setPopUpTo(homeNavigationRoute, true)
-                    .build()
+                    .setPopUpTo(HomeNavigationRoute, true)
+                    .build(),
             )
         })
     }

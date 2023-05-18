@@ -1,7 +1,16 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.loodos.samplecomposeandroid.feature.home
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -9,9 +18,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
-import com.loodos.samplecomposeandroid.feature.home.navigation.homeNavigationRoute
 import com.loodos.samplecomposeandroid.ui.components.MainAppScaffold
 
 /**
@@ -20,15 +26,13 @@ import com.loodos.samplecomposeandroid.ui.components.MainAppScaffold
 @Composable
 internal fun HomeScreenRoute(
     modifier: Modifier = Modifier,
-    viewModel: HomeViewModel = hiltViewModel()
+    viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val homeUiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     HomeScreen(homeUiState, modifier)
 }
 
-
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     homeUiState: HomeUiState,
@@ -40,7 +44,7 @@ fun HomeScreen(
             CenterAlignedTopAppBar(
                 modifier = Modifier.fillMaxWidth(),
                 title = {
-                    Text(text = "Home Screen")
+                    Text(text = homeUiState.title)
                 },
             )
         },
@@ -57,7 +61,7 @@ fun Content(modifier: Modifier = Modifier) {
             .imePadding()
             .navigationBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(text = "This is Loodos ", color = Color.Blue)
     }

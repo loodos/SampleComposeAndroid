@@ -10,14 +10,14 @@ import com.loodos.samplecomposeandroid.feature.login.LoginScreenRoute
  * Created by mertcantoptas on 10.05.2023
  */
 
-const val loginNavigationRoute = "login_route"
+const val LoginNavigationRoute = "login_route"
 
 fun NavController.navigateLoginScreen(navOptions: NavOptions? = null) {
-    this.navigate(loginNavigationRoute, navOptions)
+    this.navigate(LoginNavigationRoute, navOptions)
 }
 
 fun NavGraphBuilder.loginScreen(navigateToHome: () -> Unit) {
-    composable(loginNavigationRoute) {
+    composable(LoginNavigationRoute) {
         LoginScreenRoute(navigateToHome = navigateToHome)
     }
 }

@@ -33,24 +33,23 @@ class LoginViewModel @Inject constructor(
     fun onLoginClick() {
         viewModelScope.launch {
             validateAuthUseCase.invoke(currentState.userName, currentState.password).onEach { result ->
-                    when (result) {
-                        Resource.Loading -> {
-                            setState { copy(loading = true) }
-                        }
+                when (result) {
+                    Resource.Loading -> {
+                        setState { copy(loading = true) }
+                    }
 
-                        is Resource.Error -> {
-                            setState { copy(loading = false) }
-                            updateUIErrorState(result.exception)
-                        }
+                    is Resource.Error -> {
+                        setState { copy(loading = false) }
+                        updateUIErrorState(result.exception)
+                    }
 
-                        is Resource.Success -> {
-                            setState { copy(loading = false) }
-                            onLogin(currentState.userName, currentState.password)
-                        }
+                    is Resource.Success -> {
+                        setState { copy(loading = false) }
+                        onLogin(currentState.userName, currentState.password)
                     }
                 }
+            }
                 .launchIn(this)
-
         }
     }
 
