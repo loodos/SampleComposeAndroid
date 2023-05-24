@@ -9,4 +9,7 @@
     <string name="password_blank_error">Password cannot be blank!</string>
     <string name="username_length_error">Username must be at least 6 characters!</string>
     <string name="password_length_error">Password must be at least 6 characters!</string>
+    <string name="nav_home_title">Home</string>
+    <string name="nav_category_title">Category</string>
+    <string name="nav_profile_title">Profile</string>
 </resources>
