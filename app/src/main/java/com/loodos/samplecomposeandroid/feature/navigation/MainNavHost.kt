@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navOptions
 import com.loodos.samplecomposeandroid.feature.category.categoryScreen
+import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
 import com.loodos.samplecomposeandroid.feature.home.navigation.homeScreen
 import com.loodos.samplecomposeandroid.feature.home.navigation.navigateToHome
 import com.loodos.samplecomposeandroid.feature.login.navigation.LoginNavigationRoute
@@ -20,14 +21,17 @@ import com.loodos.samplecomposeandroid.feature.profile.profileScreen
 fun MainNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = LoginNavigationRoute,
+    startDestination: String = HomeNavigationRoute,
 ) {
     NavHost(
         modifier = modifier,
         navController = navController,
         startDestination = startDestination,
     ) {
-        homeScreen()
+        homeScreen(
+            navigateToDetail = { id ->
+            },
+        )
         loginScreen(navigateToHome = {
             navController.navigateToHome(
                 navOptions = navOptions {
