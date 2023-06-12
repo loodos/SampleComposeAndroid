@@ -11,6 +11,8 @@ import com.loodos.samplecomposeandroid.feature.home.navigation.homeScreen
 import com.loodos.samplecomposeandroid.feature.home.navigation.navigateToHome
 import com.loodos.samplecomposeandroid.feature.login.navigation.LoginNavigationRoute
 import com.loodos.samplecomposeandroid.feature.login.navigation.loginScreen
+import com.loodos.samplecomposeandroid.feature.productdetail.navigateToProductDetail
+import com.loodos.samplecomposeandroid.feature.productdetail.productDetail
 import com.loodos.samplecomposeandroid.feature.profile.profileScreen
 
 /**
@@ -30,6 +32,7 @@ fun MainNavHost(
     ) {
         homeScreen(
             navigateToDetail = { id ->
+                navController.navigateToProductDetail(id = id)
             },
         )
         loginScreen(navigateToHome = {
@@ -43,5 +46,6 @@ fun MainNavHost(
         })
         categoryScreen()
         profileScreen()
+        productDetail()
     }
 }
