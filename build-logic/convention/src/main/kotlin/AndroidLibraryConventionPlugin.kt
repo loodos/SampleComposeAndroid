@@ -19,15 +19,16 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.android")
             }
 
+            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
             extensions.configure<LibraryExtension> {
+                defaultConfig.targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
                 configureKotlinAndroid(this)
-                defaultConfig.targetSdk = 33
                 configureFlavors(this)
             }
             extensions.configure<LibraryAndroidComponentsExtension> {
                 configurePrintApksTask(this)
             }
-            val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
             configurations.configureEach {
                 resolutionStrategy {
                     force(libs.findLibrary("junit4").get())
