@@ -4,6 +4,7 @@ import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
+import com.loodos.samplecomposeandroid.BuildConfig
 import com.loodos.samplecomposeandroid.core.data.remote.api.AuthenticationService
 import dagger.Module
 import dagger.Provides
@@ -32,7 +33,7 @@ object RemoteDataModule {
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory,
     ): Retrofit {
-        return Retrofit.Builder().baseUrl("BuildConfig.BASE_URL")
+        return Retrofit.Builder().baseUrl(BuildConfig.BUILD_TYPE)
             .addConverterFactory(gsonConverterFactory)
             .client(okHttpClient).build()
     }

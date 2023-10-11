@@ -26,7 +26,6 @@ android {
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
-            isCrunchPngs = false
             buildConfigField("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -39,12 +38,12 @@ android {
             isDebuggable = true
             isMinifyEnabled = false
             isShrinkResources = false
-            isCrunchPngs = false
             enableUnitTestCoverage = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
         }
     }
 
