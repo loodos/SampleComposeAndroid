@@ -25,12 +25,12 @@ import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
+import com.loodos.data.util.NetworkMonitor
+import com.loodos.designsystems.component.MainAppScaffold
+import com.loodos.designsystems.icon.Icon
 import com.loodos.samplecomposeandroid.R
-import com.loodos.samplecomposeandroid.core.util.NetworkMonitor
 import com.loodos.samplecomposeandroid.feature.navigation.MainNavHost
 import com.loodos.samplecomposeandroid.feature.navigation.TopLevelDestination
-import com.merttoptas.designsystems.component.MainAppScaffold
-import com.merttoptas.designsystems.icon.Icon
 
 /**
  * Created by mertcantoptas on 10.03.2023
@@ -40,7 +40,7 @@ import com.merttoptas.designsystems.icon.Icon
 )
 @Composable
 fun MainApp(
-    networkMonitor: NetworkMonitor,
+    networkMonitor: com.loodos.data.util.NetworkMonitor,
     modifier: Modifier = Modifier,
     appState: MainAppState = rememberMainAppState(
         networkMonitor = networkMonitor,
@@ -66,8 +66,8 @@ fun MainApp(
         bottomBar = {
             AnimatedVisibility(
                 visible = appState.shouldShowBottomBar,
-                enter = com.merttoptas.designsystems.animation.slideIn,
-                exit = com.merttoptas.designsystems.animation.slideOut,
+                enter = com.loodos.designsystems.animation.slideIn,
+                exit = com.loodos.designsystems.animation.slideOut,
             ) {
                 AppNavBar(
                     destinations = AppDestinations(appState.topLevelDestinations),

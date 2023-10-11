@@ -17,9 +17,8 @@ import androidx.core.view.WindowCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.loodos.samplecomposeandroid.core.util.NetworkMonitor
+import com.loodos.data.util.NetworkMonitor
 import com.loodos.samplecomposeandroid.feature.appstate.MainApp
-import com.merttoptas.designsystems.theme.SampleComposeAndroidTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
@@ -30,7 +29,7 @@ import javax.inject.Inject
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var networkMonitor: NetworkMonitor
+    lateinit var networkMonitor: com.loodos.data.util.NetworkMonitor
 
     companion object {
         const val splashFadeDurationMillis = 1000L
@@ -84,7 +83,7 @@ class MainActivity : ComponentActivity() {
 
     private fun setContent() {
         setContent {
-            com.merttoptas.designsystems.theme.SampleComposeAndroidTheme {
+            com.loodos.designsystems.theme.SampleComposeAndroidTheme {
                 MainApp(networkMonitor = networkMonitor)
             }
         }
@@ -101,7 +100,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    com.merttoptas.designsystems.theme.SampleComposeAndroidTheme {
+    com.loodos.designsystems.theme.SampleComposeAndroidTheme {
         Greeting("Android")
     }
 }

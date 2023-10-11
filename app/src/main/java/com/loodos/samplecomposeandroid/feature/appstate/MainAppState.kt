@@ -10,7 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import com.loodos.samplecomposeandroid.core.util.NetworkMonitor
+import com.loodos.data.util.NetworkMonitor
 import com.loodos.samplecomposeandroid.feature.category.navigateToCategory
 import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
 import com.loodos.samplecomposeandroid.feature.home.navigation.navigateToHome
@@ -27,7 +27,7 @@ import kotlinx.coroutines.flow.stateIn
 
 @Composable
 fun rememberMainAppState(
-    networkMonitor: NetworkMonitor,
+    networkMonitor: com.loodos.data.util.NetworkMonitor,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
     navController: NavHostController = rememberNavController(),
 ): MainAppState {
@@ -40,7 +40,7 @@ fun rememberMainAppState(
 class MainAppState(
     val navController: NavHostController,
     val coroutineScope: CoroutineScope,
-    networkMonitor: NetworkMonitor,
+    networkMonitor: com.loodos.data.util.NetworkMonitor,
 ) {
     val currentDestination: NavDestination?
         @Composable get() = navController

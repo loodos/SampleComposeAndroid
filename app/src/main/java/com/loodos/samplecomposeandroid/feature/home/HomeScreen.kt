@@ -32,7 +32,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.loodos.samplecomposeandroid.R
-import com.merttoptas.designsystems.component.MainAppScaffold
 import de.palm.composestateevents.EventEffect
 
 /**
@@ -65,7 +64,7 @@ fun HomeScreen(
     onProductClick: (ProductItem) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    com.merttoptas.designsystems.component.MainAppScaffold(
+    com.loodos.designsystems.component.MainAppScaffold(
         modifier = modifier.fillMaxSize(),
         topBar = {
             CenterAlignedTopAppBar(
