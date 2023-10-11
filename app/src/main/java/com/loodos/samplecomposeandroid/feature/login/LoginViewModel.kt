@@ -4,14 +4,14 @@ import androidx.lifecycle.viewModelScope
 import com.loodos.samplecomposeandroid.R
 import com.loodos.samplecomposeandroid.arch.BaseViewModel
 import com.loodos.samplecomposeandroid.arch.IViewState
-import com.loodos.samplecomposeandroid.core.common.Resource
-import com.loodos.samplecomposeandroid.core.common.asResource
 import com.loodos.samplecomposeandroid.core.domain.PasswordLengthException
 import com.loodos.samplecomposeandroid.core.domain.PasswordRequiredException
 import com.loodos.samplecomposeandroid.core.domain.UsernameLengthException
 import com.loodos.samplecomposeandroid.core.domain.UsernameRequiredException
 import com.loodos.samplecomposeandroid.core.domain.login.LoginUseCase
 import com.loodos.samplecomposeandroid.core.domain.login.ValidateAuthUseCase
+import com.merttoptas.common.result.Resource
+import com.merttoptas.common.result.asResource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import de.palm.composestateevents.StateEvent
 import de.palm.composestateevents.StateEventWithContent

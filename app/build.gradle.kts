@@ -72,6 +72,9 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.okhttp.logging.interceptor)
 
+    implementation(project(":core:common"))
+    implementation(project(":core:designsystem"))
+
     testImplementation(libs.junit4)
 
     androidTestImplementation(libs.androidx.test.junit)

@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.core.common
+package com.merttoptas.common.result
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

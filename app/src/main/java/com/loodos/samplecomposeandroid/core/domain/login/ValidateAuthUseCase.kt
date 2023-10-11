@@ -1,11 +1,11 @@
 package com.loodos.samplecomposeandroid.core.domain.login
 
-import com.loodos.samplecomposeandroid.core.common.Resource
-import com.loodos.samplecomposeandroid.core.common.asResource
 import com.loodos.samplecomposeandroid.core.domain.PasswordLengthException
 import com.loodos.samplecomposeandroid.core.domain.PasswordRequiredException
 import com.loodos.samplecomposeandroid.core.domain.UsernameLengthException
 import com.loodos.samplecomposeandroid.core.domain.UsernameRequiredException
+import com.merttoptas.common.result.Resource
+import com.merttoptas.common.result.asResource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
