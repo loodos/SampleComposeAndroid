@@ -1,27 +1,18 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+package com.merttoptas.designsystems.component
 
-package com.loodos.samplecomposeandroid.ui.components
-
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldColors
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.loodos.samplecomposeandroid.R
 
 /**
  * Created by mertcantoptas on 10.05.2023
@@ -33,7 +24,7 @@ fun CustomTextField(
     label: @Composable (() -> Unit),
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
-    colors: TextFieldColors = TextFieldDefaults.outlinedTextFieldColors(),
+    colors: TextFieldColors = OutlinedTextFieldDefaults.colors(),
     enabled: Boolean = true,
     trailingIcon: @Composable (() -> Unit)? = null,
     placeholder: @Composable (() -> Unit)? = null,
@@ -82,13 +73,7 @@ private fun CustomTextFieldFillTextPreview() {
         label = { Text(text = "Label") },
         placeholder = { Text(text = "Placeholder") },
         isError = true,
-        trailingIcon = {
-            Image(
-                modifier = Modifier.size(24.dp),
-                imageVector = ImageVector.vectorResource(id = R.drawable.ic_cancel),
-                contentDescription = "",
-            )
-        },
+        trailingIcon = {},
         supportingText = { Text(text = "Supporting Text") },
     )
 }

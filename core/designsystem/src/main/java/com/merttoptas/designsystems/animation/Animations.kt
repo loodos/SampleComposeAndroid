@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.core.designsystem
+package com.merttoptas.designsystems.animation
 
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn

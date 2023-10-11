@@ -1,6 +1,10 @@
-package com.loodos.samplecomposeandroid.ui.theme
+package com.merttoptas.designsystems.theme
 
 import androidx.compose.ui.graphics.Color
+
+/**
+ * Loodos Sample App in Android colors. All colors must be defined here
+ */
 
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)

@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.core.designsystem.icon
+package com.merttoptas.designsystems.icon
 
 import androidx.annotation.DrawableRes
 import androidx.compose.material.icons.Icons
@@ -11,6 +11,9 @@ import androidx.compose.material.icons.outlined.Person
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.vector.ImageVector
 
+/**
+ * Loodos Sample App in Android icons. Material icons are [ImageVector]s, custom icons are drawable resource IDs.
+ */
 object AppIcons {
     val Home = Icons.Default.Home
     val HomeOutlined = Icons.Outlined.Home

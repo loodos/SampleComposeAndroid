@@ -19,7 +19,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.loodos.samplecomposeandroid.core.util.NetworkMonitor
 import com.loodos.samplecomposeandroid.feature.appstate.MainApp
-import com.loodos.samplecomposeandroid.ui.theme.SampleComposeAndroidTheme
+import com.merttoptas.designsystems.theme.SampleComposeAndroidTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
@@ -84,7 +84,7 @@ class MainActivity : ComponentActivity() {
 
     private fun setContent() {
         setContent {
-            SampleComposeAndroidTheme {
+            com.merttoptas.designsystems.theme.SampleComposeAndroidTheme {
                 MainApp(networkMonitor = networkMonitor)
             }
         }
@@ -101,7 +101,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    SampleComposeAndroidTheme {
+    com.merttoptas.designsystems.theme.SampleComposeAndroidTheme {
         Greeting("Android")
     }
 }

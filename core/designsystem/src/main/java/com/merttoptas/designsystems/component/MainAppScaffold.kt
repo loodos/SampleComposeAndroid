@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.ui.components
+package com.merttoptas.designsystems.component
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.imePadding
@@ -11,10 +11,6 @@ import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-
-/**
- * Created by mertcantoptas on 10.03.2023
- */
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

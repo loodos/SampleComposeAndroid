@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.ui.theme
+package com.merttoptas.designsystems.theme
 
 import android.app.Activity
 import android.os.Build
@@ -22,6 +22,9 @@ private val DarkColorScheme = darkColorScheme(
     tertiary = Pink80,
 )
 
+/**
+ * Light default theme color scheme
+ */
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
@@ -45,6 +48,7 @@ fun SampleComposeAndroidTheme(
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
 ) {
+    // Color scheme
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current

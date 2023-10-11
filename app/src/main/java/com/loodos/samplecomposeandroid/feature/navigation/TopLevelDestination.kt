@@ -1,12 +1,11 @@
 package com.loodos.samplecomposeandroid.feature.navigation
 
 import com.loodos.samplecomposeandroid.R
-import com.loodos.samplecomposeandroid.core.designsystem.icon.AppIcons
-import com.loodos.samplecomposeandroid.core.designsystem.icon.Icon
-import com.loodos.samplecomposeandroid.core.designsystem.icon.Icon.ImageVectorIcon
 import com.loodos.samplecomposeandroid.feature.category.CategoryRoute
 import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
 import com.loodos.samplecomposeandroid.feature.profile.ProfileRoute
+import com.merttoptas.designsystems.icon.AppIcons
+import com.merttoptas.designsystems.icon.Icon
 
 enum class TopLevelDestination(
     val route: String,
@@ -16,20 +15,20 @@ enum class TopLevelDestination(
 ) {
     HOME(
         route = HomeNavigationRoute,
-        selectedIcon = ImageVectorIcon(AppIcons.Home),
-        unselectedIcon = ImageVectorIcon(AppIcons.HomeOutlined),
+        selectedIcon = Icon.ImageVectorIcon(AppIcons.Home),
+        unselectedIcon = Icon.ImageVectorIcon(AppIcons.HomeOutlined),
         titleTextId = R.string.nav_home_title,
     ),
     CATEGORY(
         route = CategoryRoute,
-        selectedIcon = ImageVectorIcon(AppIcons.Category),
-        unselectedIcon = ImageVectorIcon(AppIcons.CategoryOutlined),
+        selectedIcon = Icon.ImageVectorIcon(AppIcons.Category),
+        unselectedIcon = Icon.ImageVectorIcon(AppIcons.CategoryOutlined),
         titleTextId = R.string.nav_category_title,
     ),
     PROFILE(
         route = ProfileRoute,
-        selectedIcon = ImageVectorIcon(AppIcons.Person),
-        unselectedIcon = ImageVectorIcon(AppIcons.PersonOutlined),
+        selectedIcon = Icon.ImageVectorIcon(AppIcons.Person),
+        unselectedIcon = Icon.ImageVectorIcon(AppIcons.PersonOutlined),
         titleTextId = R.string.nav_profile_title,
     ),
 }
