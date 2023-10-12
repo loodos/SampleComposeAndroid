@@ -26,7 +26,6 @@ android {
             isDebuggable = false
             isMinifyEnabled = true
             isShrinkResources = true
-            buildConfigField("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -43,7 +42,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"https://fakestoreapi.com/\"")
         }
     }
 
@@ -72,8 +70,10 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.okhttp.logging.interceptor)
 
-    implementation(project(":core:common"))
-    implementation(project(":core:designsystem"))
+    implementation(projects.core.common)
+    implementation(projects.core.designsystem)
+    implementation(projects.core.data)
+    implementation(projects.core.domain)
 
     testImplementation(libs.junit4)
 
@@ -94,6 +94,7 @@ dependencies {
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
 
+    implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.compose.state.events)

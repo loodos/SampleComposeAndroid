@@ -2,6 +2,8 @@ plugins {
     id("samplecomposeanroid.android.library")
     id("samplecomposeanroid.android.hilt")
     id("kotlinx-serialization")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+
 }
 
 android {
@@ -12,6 +14,10 @@ android {
             isReturnDefaultValues = true
         }
     }
+}
+
+secrets {
+    defaultPropertiesFileName = "secrets.defaults.properties"
 }
 
 dependencies {
@@ -27,5 +33,4 @@ dependencies {
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
     implementation(projects.core.common)
-    implementation(projects.core.designsystem)
 }
