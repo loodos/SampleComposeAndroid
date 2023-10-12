@@ -35,9 +35,6 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.loodos.samplecomposeandroid.R
-import com.loodos.samplecomposeandroid.ui.components.CustomTextField
-import com.loodos.samplecomposeandroid.ui.components.MainAppScaffold
-import com.loodos.samplecomposeandroid.ui.theme.SampleComposeAndroidTheme
 import de.palm.composestateevents.EventEffect
 
 /**
@@ -75,7 +72,7 @@ fun LoginScreen(
     modifier: Modifier = Modifier,
     onLoginClicked: () -> Unit,
 ) {
-    MainAppScaffold(
+    com.loodos.designsystems.component.MainAppScaffold(
         modifier = modifier.fillMaxSize(),
     ) {
         Content(
@@ -140,7 +137,7 @@ private fun UserNameTextField(
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    CustomTextField(
+    com.loodos.designsystems.component.CustomTextField(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp),
@@ -183,7 +180,7 @@ private fun PasswordTextField(
     modifier: Modifier = Modifier,
 ) {
     var isPasswordVisible by remember { mutableStateOf(false) }
-    CustomTextField(
+    com.loodos.designsystems.component.CustomTextField(
         modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp),
@@ -229,7 +226,7 @@ private fun PasswordTextField(
 @Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
-    SampleComposeAndroidTheme() {
+    com.loodos.designsystems.theme.SampleComposeAndroidTheme() {
         Content(
             LoginViewState(),
             onUserNameValueChange = {},

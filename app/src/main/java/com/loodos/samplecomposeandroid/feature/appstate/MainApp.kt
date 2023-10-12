@@ -25,14 +25,12 @@ import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
+import com.loodos.data.util.NetworkMonitor
+import com.loodos.designsystems.component.MainAppScaffold
+import com.loodos.designsystems.icon.Icon
 import com.loodos.samplecomposeandroid.R
-import com.loodos.samplecomposeandroid.core.designsystem.icon.Icon
-import com.loodos.samplecomposeandroid.core.designsystem.slideIn
-import com.loodos.samplecomposeandroid.core.designsystem.slideOut
-import com.loodos.samplecomposeandroid.core.util.NetworkMonitor
-import com.loodos.samplecomposeandroid.feature.navigation.MainNavHost
-import com.loodos.samplecomposeandroid.feature.navigation.TopLevelDestination
-import com.loodos.samplecomposeandroid.ui.components.MainAppScaffold
+import com.loodos.samplecomposeandroid.navigation.MainNavHost
+import com.loodos.samplecomposeandroid.navigation.TopLevelDestination
 
 /**
  * Created by mertcantoptas on 10.03.2023
@@ -68,8 +66,8 @@ fun MainApp(
         bottomBar = {
             AnimatedVisibility(
                 visible = appState.shouldShowBottomBar,
-                enter = slideIn,
-                exit = slideOut,
+                enter = com.loodos.designsystems.animation.slideIn,
+                exit = com.loodos.designsystems.animation.slideOut,
             ) {
                 AppNavBar(
                     destinations = AppDestinations(appState.topLevelDestinations),

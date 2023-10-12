@@ -1,17 +1,17 @@
 package com.loodos.samplecomposeandroid.feature.login
 
 import androidx.lifecycle.viewModelScope
+import com.loodos.common.result.Resource
+import com.loodos.common.result.asResource
+import com.loodos.domain.login.LoginUseCase
+import com.loodos.domain.login.ValidateAuthUseCase
 import com.loodos.samplecomposeandroid.R
 import com.loodos.samplecomposeandroid.arch.BaseViewModel
 import com.loodos.samplecomposeandroid.arch.IViewState
-import com.loodos.samplecomposeandroid.core.common.Resource
-import com.loodos.samplecomposeandroid.core.common.asResource
 import com.loodos.samplecomposeandroid.core.domain.PasswordLengthException
 import com.loodos.samplecomposeandroid.core.domain.PasswordRequiredException
 import com.loodos.samplecomposeandroid.core.domain.UsernameLengthException
 import com.loodos.samplecomposeandroid.core.domain.UsernameRequiredException
-import com.loodos.samplecomposeandroid.core.domain.login.LoginUseCase
-import com.loodos.samplecomposeandroid.core.domain.login.ValidateAuthUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import de.palm.composestateevents.StateEvent
 import de.palm.composestateevents.StateEventWithContent

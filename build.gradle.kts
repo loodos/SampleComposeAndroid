@@ -1,14 +1,19 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-// TODO: Remove once https://youtrack.jetbrains.com/issue/KTIJ-19369 is fixed
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.detekt)
+    alias(libs.plugins.gradle.versions)
     alias(libs.plugins.kotlinter) apply false
-    alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.android.library) apply false
-    alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.kotlin.jvm) apply false
-    alias(libs.plugins.dagger.hilt) apply false
+    alias(libs.plugins.com.android.application) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.org.jetbrains.kotlin.android) apply false
+    alias(libs.plugins.dagger.hilt.android) apply false
+    alias(libs.plugins.com.android.test) apply false
+    alias(libs.plugins.google.services) apply false
+    alias(libs.plugins.firebase.crashlytics) apply false
+    alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.com.android.library) apply false
+    alias(libs.plugins.secrets) apply false
+
 }
 
 apply(from = "buildscripts/githooks.gradle")

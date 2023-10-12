@@ -3,6 +3,7 @@
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="login">Login</string>
+    <string name="app_name">Sample Compose</string>
 
 
     <string name="username_blank_error">Username cannot be blank!</string>
