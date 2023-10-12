@@ -1,17 +1,17 @@
 package com.loodos.samplecomposeandroid.feature.login
 
 import androidx.lifecycle.viewModelScope
-import com.PasswordLengthException
-import com.PasswordRequiredException
-import com.UsernameLengthException
-import com.UsernameRequiredException
-import com.login.LoginUseCase
-import com.login.ValidateAuthUseCase
 import com.loodos.common.result.Resource
 import com.loodos.common.result.asResource
+import com.loodos.domain.login.LoginUseCase
+import com.loodos.domain.login.ValidateAuthUseCase
 import com.loodos.samplecomposeandroid.R
 import com.loodos.samplecomposeandroid.arch.BaseViewModel
 import com.loodos.samplecomposeandroid.arch.IViewState
+import com.loodos.samplecomposeandroid.core.domain.PasswordLengthException
+import com.loodos.samplecomposeandroid.core.domain.PasswordRequiredException
+import com.loodos.samplecomposeandroid.core.domain.UsernameLengthException
+import com.loodos.samplecomposeandroid.core.domain.UsernameRequiredException
 import dagger.hilt.android.lifecycle.HiltViewModel
 import de.palm.composestateevents.StateEvent
 import de.palm.composestateevents.StateEventWithContent
@@ -24,8 +24,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val loginUseCase: com.login.LoginUseCase,
-    private val validateAuthUseCase: com.login.ValidateAuthUseCase,
+    private val loginUseCase: LoginUseCase,
+    private val validateAuthUseCase: ValidateAuthUseCase,
 ) : BaseViewModel<LoginViewState>() {
 
     override fun createInitialState(): LoginViewState = LoginViewState()
@@ -96,19 +96,19 @@ class LoginViewModel @Inject constructor(
 
     private fun updateUIErrorState(exception: Throwable?) {
         when (exception) {
-            is com.PasswordLengthException -> {
+            is PasswordLengthException -> {
                 setState { copy(passwordErrorMessage = R.string.password_length_error) }
             }
 
-            is com.PasswordRequiredException -> {
+            is PasswordRequiredException -> {
                 setState { copy(passwordErrorMessage = R.string.password_blank_error) }
             }
 
-            is com.UsernameLengthException -> {
+            is UsernameLengthException -> {
                 setState { copy(usernameErrorMessage = R.string.username_length_error) }
             }
 
-            is com.UsernameRequiredException -> {
+            is UsernameRequiredException -> {
                 setState { copy(usernameErrorMessage = R.string.username_blank_error) }
             }
         }

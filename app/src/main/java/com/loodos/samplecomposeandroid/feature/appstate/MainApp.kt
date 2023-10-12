@@ -29,8 +29,8 @@ import com.loodos.data.util.NetworkMonitor
 import com.loodos.designsystems.component.MainAppScaffold
 import com.loodos.designsystems.icon.Icon
 import com.loodos.samplecomposeandroid.R
-import com.loodos.samplecomposeandroid.feature.navigation.MainNavHost
-import com.loodos.samplecomposeandroid.feature.navigation.TopLevelDestination
+import com.loodos.samplecomposeandroid.navigation.MainNavHost
+import com.loodos.samplecomposeandroid.navigation.TopLevelDestination
 
 /**
  * Created by mertcantoptas on 10.03.2023
@@ -40,7 +40,7 @@ import com.loodos.samplecomposeandroid.feature.navigation.TopLevelDestination
 )
 @Composable
 fun MainApp(
-    networkMonitor: com.loodos.data.util.NetworkMonitor,
+    networkMonitor: NetworkMonitor,
     modifier: Modifier = Modifier,
     appState: MainAppState = rememberMainAppState(
         networkMonitor = networkMonitor,

@@ -14,8 +14,8 @@ import com.loodos.data.util.NetworkMonitor
 import com.loodos.samplecomposeandroid.feature.category.navigateToCategory
 import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
 import com.loodos.samplecomposeandroid.feature.home.navigation.navigateToHome
-import com.loodos.samplecomposeandroid.feature.navigation.TopLevelDestination
 import com.loodos.samplecomposeandroid.feature.profile.navigateToProfile
+import com.loodos.samplecomposeandroid.navigation.TopLevelDestination
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
