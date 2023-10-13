@@ -1,10 +1,10 @@
-package com.loodos.samplecomposeandroid.feature.login.navigation
+package com.merttoptas.login.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import com.loodos.samplecomposeandroid.feature.login.LoginScreenRoute
+import com.merttoptas.login.LoginScreenRoute
 
 /**
  * Created by mertcantoptas on 10.05.2023
