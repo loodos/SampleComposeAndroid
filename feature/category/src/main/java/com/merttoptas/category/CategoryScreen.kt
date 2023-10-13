@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.feature.category
+package com.merttoptas.category
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text

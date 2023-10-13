@@ -5,15 +5,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navOptions
-import com.loodos.samplecomposeandroid.feature.category.categoryScreen
-import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
-import com.loodos.samplecomposeandroid.feature.home.navigation.homeScreen
-import com.loodos.samplecomposeandroid.feature.home.navigation.navigateToHome
-import com.loodos.samplecomposeandroid.feature.login.navigation.LoginNavigationRoute
-import com.loodos.samplecomposeandroid.feature.login.navigation.loginScreen
-import com.loodos.samplecomposeandroid.feature.productdetail.navigateToProductDetail
-import com.loodos.samplecomposeandroid.feature.productdetail.productDetail
-import com.loodos.samplecomposeandroid.feature.profile.profileScreen
+import com.merttoptas.category.navigation.categoryScreen
+import com.merttoptas.home.navigation.homeScreen
+import com.merttoptas.home.navigation.navigateToHome
+import com.merttoptas.login.navigation.LoginNavigationRoute
+import com.merttoptas.login.navigation.loginScreen
+import com.merttoptas.productdetail.navigation.navigateToProductDetail
+import com.merttoptas.productdetail.navigation.productDetail
+import com.merttoptas.profile.navigation.profileScreen
 
 /**
  * Created by mertcantoptas on 10.03.2023
@@ -23,7 +22,7 @@ import com.loodos.samplecomposeandroid.feature.profile.profileScreen
 fun MainNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = HomeNavigationRoute,
+    startDestination: String = LoginNavigationRoute,
 ) {
     NavHost(
         modifier = modifier,

@@ -1,7 +1,7 @@
-package com.loodos.samplecomposeandroid.feature.category
+package com.merttoptas.category
 
-import com.loodos.samplecomposeandroid.arch.BaseViewModel
-import com.loodos.samplecomposeandroid.arch.IViewState
+import com.loodos.common.base.BaseViewModel
+import com.loodos.common.base.IViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

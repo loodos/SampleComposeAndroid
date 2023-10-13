@@ -1,9 +1,10 @@
-package com.loodos.samplecomposeandroid.feature.category
+package com.merttoptas.category.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.merttoptas.category.CategoryRoute
 
 const val CategoryRoute = "category_route"
 
