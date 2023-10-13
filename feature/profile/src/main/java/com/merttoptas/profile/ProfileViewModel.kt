@@ -1,7 +1,7 @@
-package com.loodos.samplecomposeandroid.feature.profile
+package com.merttoptas.profile
 
-import com.loodos.samplecomposeandroid.arch.BaseViewModel
-import com.loodos.samplecomposeandroid.arch.IViewState
+import com.loodos.common.base.BaseViewModel
+import com.loodos.common.base.IViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

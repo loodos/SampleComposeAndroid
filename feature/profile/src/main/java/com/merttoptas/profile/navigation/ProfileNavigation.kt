@@ -1,9 +1,10 @@
-package com.loodos.samplecomposeandroid.feature.profile
+package com.merttoptas.profile.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
+import com.merttoptas.profile.ProfileRoute
 
 const val ProfileRoute = "profile_route"
 

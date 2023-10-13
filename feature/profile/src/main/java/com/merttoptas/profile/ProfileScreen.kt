@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.feature.profile
+package com.merttoptas.profile
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
