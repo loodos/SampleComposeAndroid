@@ -5,7 +5,7 @@ import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
 import com.loodos.data.remote.api.AuthenticationService
-import com.loodos.samplecomposeanroid.core.data.BuildConfig
+import com.loodos.samplecomposeandroid.core.data.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,13 +1,15 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("samplecomposeanroid.android.library")
-    id("samplecomposeanroid.android.library.compose")
+    alias(libs.plugins.samplecomposeandroid.android.library)
+    alias(libs.plugins.samplecomposeandroid.android.library.compose)
+    alias(libs.plugins.samplecomposeandroid.android.library.jacoco)
 }
 
 android {
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    namespace = "com.loodos.samplecomposeanroid.core.designsystem"
+    namespace = "com.loodos.samplecomposeandroid.core.designsystem"
 }
 
 dependencies {

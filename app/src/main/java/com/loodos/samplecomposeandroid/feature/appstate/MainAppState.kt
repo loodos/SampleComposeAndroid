@@ -11,11 +11,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import com.loodos.data.util.NetworkMonitor
-import com.loodos.samplecomposeandroid.feature.category.navigateToCategory
-import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
-import com.loodos.samplecomposeandroid.feature.home.navigation.navigateToHome
-import com.loodos.samplecomposeandroid.feature.profile.navigateToProfile
 import com.loodos.samplecomposeandroid.navigation.TopLevelDestination
+import com.merttoptas.category.navigation.navigateToCategory
+import com.merttoptas.home.navigation.navigateToHome
+import com.merttoptas.profile.navigation.navigateToProfile
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -27,7 +26,7 @@ import kotlinx.coroutines.flow.stateIn
 
 @Composable
 fun rememberMainAppState(
-    networkMonitor: com.loodos.data.util.NetworkMonitor,
+    networkMonitor: NetworkMonitor,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
     navController: NavHostController = rememberNavController(),
 ): MainAppState {
@@ -40,7 +39,7 @@ fun rememberMainAppState(
 class MainAppState(
     val navController: NavHostController,
     val coroutineScope: CoroutineScope,
-    networkMonitor: com.loodos.data.util.NetworkMonitor,
+    networkMonitor: NetworkMonitor,
 ) {
     val currentDestination: NavDestination?
         @Composable get() = navController
@@ -68,7 +67,7 @@ class MainAppState(
             // Pop up to the start destination of the graph to
             // avoid building up a large stack of destinations
             // on the back stack as users select items
-            popUpTo(HomeNavigationRoute) {
+            popUpTo(com.merttoptas.home.navigation.HomeNavigationRoute) {
                 saveState = true
             }
             // Avoid multiple copies of the same destination when

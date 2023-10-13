@@ -3,6 +3,7 @@ package samplecomposeandroid
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.ApplicationProductFlavor
 import com.android.build.api.dsl.CommonExtension
+import com.android.build.api.dsl.ProductFlavor
 import org.gradle.api.Project
 
 enum class FlavorDimension {
@@ -23,7 +24,7 @@ fun Project.configureFlavors(
     commonExtension.apply {
         flavorDimensions += FlavorDimension.CONTENT_TYPE.name
         productFlavors {
-            Flavor.values().forEach{
+            Flavor.values().forEach {
                 create(it.name) {
                     dimension = it.dimension.name
                     if (this@apply is ApplicationExtension && this is ApplicationProductFlavor) {

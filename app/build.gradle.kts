@@ -1,9 +1,13 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("samplecomposeanroid.android.application")
-    id("samplecomposeanroid.android.application.compose")
-    id("samplecomposeanroid.android.room")
-    id("samplecomposeanroid.android.hilt")
-    id("samplecomposeanroid.kotlinter")
+    alias(libs.plugins.samplecomposeandroid.android.application)
+    alias(libs.plugins.samplecomposeandroid.android.application.compose)
+    alias(libs.plugins.samplecomposeandroid.android.application.flavors)
+    alias(libs.plugins.samplecomposeandroid.android.application.jacoco)
+    alias(libs.plugins.samplecomposeandroid.android.hilt)
+    id("jacoco")
+    id("samplecomposeandroid.android.room")
+    id("samplecomposeandroid.kotlinter")
 }
 
 android {
@@ -22,26 +26,8 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
-            isDebuggable = false
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-
-        }
-
-        getByName("debug") {
-            isDebuggable = true
-            isMinifyEnabled = false
-            isShrinkResources = false
-            enableUnitTestCoverage = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+        debug {
+            applicationIdSuffix = "debug"
         }
     }
 
@@ -69,6 +55,12 @@ dependencies {
     implementation(libs.square.retrofit.converter.moshi)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.okhttp.logging.interceptor)
+
+    implementation(projects.feature.login)
+    implementation(projects.feature.home)
+    implementation(projects.feature.category)
+    implementation(projects.feature.profile)
+    implementation(projects.feature.productdetail)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)

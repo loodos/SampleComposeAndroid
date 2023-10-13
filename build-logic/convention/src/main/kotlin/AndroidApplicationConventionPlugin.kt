@@ -20,9 +20,8 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
             extensions.configure<ApplicationExtension> {
-                configureKotlinAndroid(this)
                 defaultConfig.targetSdk = libs.findVersion("compileSdk").get().toString().toInt()
-                configureFlavors(this)
+                configureKotlinAndroid(this)
             }
             extensions.configure<ApplicationAndroidComponentsExtension> {
                 configurePrintApksTask(this)

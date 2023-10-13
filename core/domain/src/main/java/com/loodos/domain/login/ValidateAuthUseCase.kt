@@ -1,9 +1,9 @@
 package com.loodos.domain.login
 
-import com.loodos.samplecomposeandroid.core.domain.PasswordLengthException
-import com.loodos.samplecomposeandroid.core.domain.PasswordRequiredException
-import com.loodos.samplecomposeandroid.core.domain.UsernameLengthException
-import com.loodos.samplecomposeandroid.core.domain.UsernameRequiredException
+import com.loodos.domain.PasswordLengthException
+import com.loodos.domain.PasswordRequiredException
+import com.loodos.domain.UsernameLengthException
+import com.loodos.domain.UsernameRequiredException
 import com.loodos.common.result.Resource
 import com.loodos.common.result.asResource
 import kotlinx.coroutines.flow.Flow
