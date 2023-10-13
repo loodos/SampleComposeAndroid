@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.feature.productdetail
+package com.merttoptas.productdetail.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -6,6 +6,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.merttoptas.productdetail.ProductDetailRoute
 
 const val productDetailRoute = "productDetail_route"
 const val idArg = "id"

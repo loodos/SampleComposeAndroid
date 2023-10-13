@@ -1,8 +1,9 @@
-package com.loodos.samplecomposeandroid.feature.productdetail
+package com.merttoptas.productdetail
 
 import androidx.lifecycle.SavedStateHandle
-import com.loodos.samplecomposeandroid.arch.BaseViewModel
-import com.loodos.samplecomposeandroid.arch.IViewState
+import com.loodos.common.base.BaseViewModel
+import com.loodos.common.base.IViewState
+import com.merttoptas.productdetail.navigation.idArg
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

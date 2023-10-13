@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.feature.productdetail
+package com.merttoptas.productdetail
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.gestures.detectDragGestures
