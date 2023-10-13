@@ -1,10 +1,10 @@
-package com.loodos.samplecomposeandroid.feature.home.navigation
+package com.merttoptas.home.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
-import com.loodos.samplecomposeandroid.feature.home.HomeScreenRoute
+import com.merttoptas.home.HomeScreenRoute
 
 /**
  * Created by mertcantoptas on 10.03.2023

@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package com.loodos.samplecomposeandroid.feature.home
+package com.merttoptas.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -31,7 +31,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.loodos.samplecomposeandroid.R
+import com.loodos.samplecomposeandroid.feature.home.R
 import de.palm.composestateevents.EventEffect
 
 /**

@@ -1,9 +1,9 @@
-package com.loodos.samplecomposeandroid.feature.home
+package com.merttoptas.home
 
 import androidx.compose.runtime.Stable
 import androidx.lifecycle.viewModelScope
-import com.loodos.samplecomposeandroid.arch.BaseViewModel
-import com.loodos.samplecomposeandroid.arch.IViewState
+import com.loodos.common.base.BaseViewModel
+import com.loodos.common.base.IViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import de.palm.composestateevents.StateEventWithContent
 import de.palm.composestateevents.consumed
