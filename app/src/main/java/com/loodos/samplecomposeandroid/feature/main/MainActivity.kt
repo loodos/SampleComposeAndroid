@@ -17,6 +17,7 @@ import androidx.core.view.WindowCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.metrics.performance.JankStats
 import com.loodos.data.util.NetworkMonitor
 import com.loodos.samplecomposeandroid.feature.appstate.MainApp
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,7 +30,10 @@ import javax.inject.Inject
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var networkMonitor: com.loodos.data.util.NetworkMonitor
+    lateinit var networkMonitor: NetworkMonitor
+
+    @Inject
+    lateinit var lazyStats: dagger.Lazy<JankStats>
 
     companion object {
         const val splashFadeDurationMillis = 1000L
@@ -87,6 +91,16 @@ class MainActivity : ComponentActivity() {
                 MainApp(networkMonitor = networkMonitor)
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        lazyStats.get().isTrackingEnabled = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        lazyStats.get().isTrackingEnabled = false
     }
 }
 

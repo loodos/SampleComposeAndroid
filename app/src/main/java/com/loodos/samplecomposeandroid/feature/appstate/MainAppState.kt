@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
@@ -12,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import com.loodos.data.util.NetworkMonitor
 import com.loodos.samplecomposeandroid.navigation.TopLevelDestination
+import com.loodos.ui.TrackDisposableJank
 import com.merttoptas.category.navigation.navigateToCategory
 import com.merttoptas.home.navigation.navigateToHome
 import com.merttoptas.profile.navigation.navigateToProfile
@@ -30,6 +32,7 @@ fun rememberMainAppState(
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
     navController: NavHostController = rememberNavController(),
 ): MainAppState {
+    NavigationTrackingSideEffect(navController)
     return remember(navController, coroutineScope, networkMonitor) {
         MainAppState(navController, coroutineScope, networkMonitor)
     }
@@ -86,5 +89,23 @@ class MainAppState(
 
     fun onBackClick() {
         navController.popBackStack()
+    }
+}
+
+/**
+ * Stores information about navigation events to be used with JankStats
+ */
+@Composable
+private fun NavigationTrackingSideEffect(navController: NavHostController) {
+    TrackDisposableJank(navController) { metricsHolder ->
+        val listener = NavController.OnDestinationChangedListener { _, destination, _ ->
+            metricsHolder.state?.putState("Navigation", destination.route.toString())
+        }
+
+        navController.addOnDestinationChangedListener(listener)
+
+        onDispose {
+            navController.removeOnDestinationChangedListener(listener)
+        }
     }
 }

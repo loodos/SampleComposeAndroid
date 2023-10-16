@@ -16,6 +16,8 @@ import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.lazy.staggeredgrid.rememberLazyStaggeredGridState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.CircularProgressIndicator
@@ -32,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.loodos.samplecomposeandroid.feature.home.R
+import com.loodos.ui.TrackScrollJank
 import de.palm.composestateevents.EventEffect
 
 /**
@@ -89,6 +92,9 @@ fun Content(
     onProductClick: (ProductItem) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val scrollableState = rememberLazyListState()
+    TrackScrollJank(scrollableState = scrollableState, stateName = "home:LazyList")
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -96,6 +102,7 @@ fun Content(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         LazyColumn(
+            state = scrollableState,
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             contentPadding = PaddingValues(vertical = 16.dp),
