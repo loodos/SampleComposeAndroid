@@ -80,6 +80,7 @@ androidx-metrics = { group = "androidx.metrics", name = "metrics-performance", v
 androidx-room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTest" }
+androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
 compose-material = { group = "androidx.compose.material3", name = "material3" }

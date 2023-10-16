@@ -23,6 +23,8 @@ secrets {
 }
 
 dependencies {
+    implementation(projects.core.common)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
@@ -34,5 +36,7 @@ dependencies {
 
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
-    implementation(projects.core.common)
+
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.svg)
 }
