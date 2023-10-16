@@ -4,18 +4,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
+import com.loodos.category.navigation.navigateToCategory
 import com.loodos.data.util.NetworkMonitor
-import com.loodos.samplecomposeandroid.feature.category.navigateToCategory
-import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
-import com.loodos.samplecomposeandroid.feature.home.navigation.navigateToHome
-import com.loodos.samplecomposeandroid.feature.profile.navigateToProfile
+import com.loodos.home.navigation.navigateToHome
+import com.loodos.profile.navigation.navigateToProfile
 import com.loodos.samplecomposeandroid.navigation.TopLevelDestination
+import com.loodos.ui.TrackDisposableJank
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -27,10 +28,11 @@ import kotlinx.coroutines.flow.stateIn
 
 @Composable
 fun rememberMainAppState(
-    networkMonitor: com.loodos.data.util.NetworkMonitor,
+    networkMonitor: NetworkMonitor,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
     navController: NavHostController = rememberNavController(),
 ): MainAppState {
+    NavigationTrackingSideEffect(navController)
     return remember(navController, coroutineScope, networkMonitor) {
         MainAppState(navController, coroutineScope, networkMonitor)
     }
@@ -40,7 +42,7 @@ fun rememberMainAppState(
 class MainAppState(
     val navController: NavHostController,
     val coroutineScope: CoroutineScope,
-    networkMonitor: com.loodos.data.util.NetworkMonitor,
+    networkMonitor: NetworkMonitor,
 ) {
     val currentDestination: NavDestination?
         @Composable get() = navController
@@ -68,7 +70,7 @@ class MainAppState(
             // Pop up to the start destination of the graph to
             // avoid building up a large stack of destinations
             // on the back stack as users select items
-            popUpTo(HomeNavigationRoute) {
+            popUpTo(com.loodos.home.navigation.HomeNavigationRoute) {
                 saveState = true
             }
             // Avoid multiple copies of the same destination when
@@ -87,5 +89,23 @@ class MainAppState(
 
     fun onBackClick() {
         navController.popBackStack()
+    }
+}
+
+/**
+ * Stores information about navigation events to be used with JankStats
+ */
+@Composable
+private fun NavigationTrackingSideEffect(navController: NavHostController) {
+    TrackDisposableJank(navController) { metricsHolder ->
+        val listener = NavController.OnDestinationChangedListener { _, destination, _ ->
+            metricsHolder.state?.putState("Navigation", destination.route.toString())
+        }
+
+        navController.addOnDestinationChangedListener(listener)
+
+        onDispose {
+            navController.removeOnDestinationChangedListener(listener)
+        }
     }
 }

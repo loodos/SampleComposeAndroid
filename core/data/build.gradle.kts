@@ -1,13 +1,15 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("samplecomposeanroid.android.library")
-    id("samplecomposeanroid.android.hilt")
-    id("kotlinx-serialization")
+    alias(libs.plugins.samplecomposeandroid.android.library)
+    alias(libs.plugins.samplecomposeandroid.android.library.jacoco)
+    alias(libs.plugins.samplecomposeandroid.android.hilt)
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("kotlinx-serialization")
 
 }
 
 android {
-    namespace = "com.loodos.samplecomposeanroid.core.data"
+    namespace = "com.loodos.samplecomposeandroid.core.data"
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
@@ -21,16 +23,17 @@ secrets {
 }
 
 dependencies {
+    implementation(projects.core.common)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.datetime)
-    implementation(libs.retrofit.converter.gson)
-    implementation(libs.square.retrofit)
-    implementation(libs.square.retrofit.converter.moshi)
-    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.bundles.network.retrofit)
 
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
-    implementation(projects.core.common)
+
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.svg)
 }

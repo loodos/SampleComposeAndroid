@@ -1,16 +1,20 @@
 package com.loodos.data.di
 
 import android.content.Context
+import coil.ImageLoader
+import coil.decode.SvgDecoder
+import coil.util.DebugLogger
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
 import com.loodos.data.remote.api.AuthenticationService
-import com.loodos.samplecomposeanroid.core.data.BuildConfig
+import com.loodos.samplecomposeandroid.core.data.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Call
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -90,4 +94,37 @@ object RemoteDataModule {
     fun provideLoginService(retrofit: Retrofit): AuthenticationService {
         return retrofit.create(AuthenticationService::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun provideOkHttpCallFactory(): Call.Factory = OkHttpClient.Builder()
+        .addInterceptor(
+            HttpLoggingInterceptor()
+                .apply {
+                    if (BuildConfig.DEBUG) {
+                        setLevel(HttpLoggingInterceptor.Level.BODY)
+                    }
+                },
+        )
+        .build()
+
+    @Provides
+    @Singleton
+    fun provideImageLoader(
+        okHttpCallFactory: Call.Factory,
+        @ApplicationContext application: Context,
+    ): ImageLoader = ImageLoader.Builder(application)
+        .callFactory(okHttpCallFactory)
+        .components {
+            add(SvgDecoder.Factory())
+        }
+        // Assume most content images are versioned urls
+        // but some problematic images are fetching each time
+        .respectCacheHeaders(false)
+        .apply {
+            if (BuildConfig.DEBUG) {
+                logger(DebugLogger())
+            }
+        }
+        .build()
 }

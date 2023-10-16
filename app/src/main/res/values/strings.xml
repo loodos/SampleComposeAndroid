@@ -1,15 +1,9 @@
 <resources>
     <string name="not_network_connected">Not network connected!</string>
-    <string name="username_hint">Username</string>
-    <string name="password_hint">Password</string>
-    <string name="login">Login</string>
     <string name="app_name">Sample Compose</string>
 
 
-    <string name="username_blank_error">Username cannot be blank!</string>
-    <string name="password_blank_error">Password cannot be blank!</string>
-    <string name="username_length_error">Username must be at least 6 characters!</string>
-    <string name="password_length_error">Password must be at least 6 characters!</string>
+
     <string name="nav_home_title">Home</string>
     <string name="nav_category_title">Category</string>
     <string name="nav_profile_title">Profile</string>

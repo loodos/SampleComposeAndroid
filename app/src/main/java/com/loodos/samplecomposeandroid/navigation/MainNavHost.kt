@@ -5,15 +5,15 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navOptions
-import com.loodos.samplecomposeandroid.feature.category.categoryScreen
-import com.loodos.samplecomposeandroid.feature.home.navigation.HomeNavigationRoute
-import com.loodos.samplecomposeandroid.feature.home.navigation.homeScreen
-import com.loodos.samplecomposeandroid.feature.home.navigation.navigateToHome
-import com.loodos.samplecomposeandroid.feature.login.navigation.LoginNavigationRoute
-import com.loodos.samplecomposeandroid.feature.login.navigation.loginScreen
-import com.loodos.samplecomposeandroid.feature.productdetail.navigateToProductDetail
-import com.loodos.samplecomposeandroid.feature.productdetail.productDetail
-import com.loodos.samplecomposeandroid.feature.profile.profileScreen
+import com.loodos.category.navigation.categoryScreen
+import com.loodos.home.navigation.HomeNavigationRoute
+import com.loodos.home.navigation.homeScreen
+import com.loodos.home.navigation.navigateToHome
+import com.loodos.login.navigation.LoginNavigationRoute
+import com.loodos.login.navigation.loginScreen
+import com.loodos.productdetail.navigation.navigateToProductDetail
+import com.loodos.productdetail.navigation.productDetail
+import com.loodos.profile.navigation.profileScreen
 
 /**
  * Created by mertcantoptas on 10.03.2023

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">Login</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+
+    <string name="username_blank_error">Username cannot be blank!</string>
+    <string name="password_blank_error">Password cannot be blank!</string>
+    <string name="username_length_error">Username must be at least 6 characters!</string>
+    <string name="password_length_error">Password must be at least 6 characters!</string>
+
+</resources>

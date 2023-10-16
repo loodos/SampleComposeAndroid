@@ -1,9 +1,13 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("samplecomposeanroid.android.application")
-    id("samplecomposeanroid.android.application.compose")
-    id("samplecomposeanroid.android.room")
-    id("samplecomposeanroid.android.hilt")
-    id("samplecomposeanroid.kotlinter")
+    alias(libs.plugins.samplecomposeandroid.android.application)
+    alias(libs.plugins.samplecomposeandroid.android.application.compose)
+    alias(libs.plugins.samplecomposeandroid.android.application.flavors)
+    alias(libs.plugins.samplecomposeandroid.android.application.jacoco)
+    alias(libs.plugins.samplecomposeandroid.android.hilt)
+    id("jacoco")
+    id("samplecomposeandroid.android.room")
+    id("samplecomposeandroid.kotlinter")
 }
 
 android {
@@ -21,29 +25,6 @@ android {
         }
     }
 
-    buildTypes {
-        getByName("release") {
-            isDebuggable = false
-            isMinifyEnabled = true
-            isShrinkResources = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-
-        }
-
-        getByName("debug") {
-            isDebuggable = true
-            isMinifyEnabled = false
-            isShrinkResources = false
-            enableUnitTestCoverage = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
 
     packagingOptions {
         resources {
@@ -54,52 +35,49 @@ android {
     namespace = "com.loodos.samplecomposeandroid"
 }
 dependencies {
-    implementation(libs.accompanist.systemuicontroller)
-    implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.android.material)
-    implementation(libs.compose.ui)
-    implementation(libs.compose.material)
-    implementation(libs.androidx.compose.material.iconsExtended)
-    implementation(libs.compose.ui.tooling)
-    implementation(libs.square.moshi.kotlin)
-    implementation(libs.square.retrofit)
-    implementation(libs.square.retrofit.converter.moshi)
-    implementation(libs.androidx.core.splashscreen)
-    implementation(libs.okhttp.logging.interceptor)
+    implementation(projects.feature.login)
+    implementation(projects.feature.home)
+    implementation(projects.feature.category)
+    implementation(projects.feature.profile)
+    implementation(projects.feature.productdetail)
 
     implementation(projects.core.common)
     implementation(projects.core.designsystem)
     implementation(projects.core.data)
     implementation(projects.core.domain)
+    implementation(projects.core.ui)
+
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.compose.runtime.tracing)
+    implementation(libs.androidx.compose.material3.windowSizeClass)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.coil.kt)
+    implementation(libs.compose.state.events)
 
     testImplementation(libs.junit4)
-
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)
-    androidTestImplementation(libs.compose.ui.test.junit)
     androidTestImplementation(libs.hilt.android.testing)
-    implementation(libs.androidx.hilt.navigation.compose)
-
-
-    debugImplementation(libs.compose.ui.test.manifest)
-    debugImplementation(libs.compose.ui.tooling)
+    androidTestImplementation(libs.androidx.navigation.testing)
     debugImplementation(libs.square.leakcanary)
-    implementation(libs.retrofit.converter.gson)
 
     kapt(libs.square.moshi.kotlin.codegen)
 
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
 
-    implementation(libs.androidx.compose.runtime)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.runtimeCompose)
-    implementation(libs.compose.state.events)
-    implementation(libs.androidx.fragment.ktx)
-    implementation(libs.androidx.navigation.compose)
-
+    // Core functions
+    kaptTest(libs.hilt.compiler)
+    testImplementation(kotlin("test"))
+    testImplementation(libs.androidx.navigation.testing)
 
 }

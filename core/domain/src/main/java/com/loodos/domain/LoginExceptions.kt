@@ -1,4 +1,4 @@
-package com.loodos.samplecomposeandroid.core.domain
+package com.loodos.domain
 
 /**
  * Created by mertcantoptas on 12.05.2023
