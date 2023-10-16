@@ -5,14 +5,15 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navOptions
-import com.merttoptas.category.navigation.categoryScreen
-import com.merttoptas.home.navigation.homeScreen
-import com.merttoptas.home.navigation.navigateToHome
-import com.merttoptas.login.navigation.LoginNavigationRoute
-import com.merttoptas.login.navigation.loginScreen
-import com.merttoptas.productdetail.navigation.navigateToProductDetail
-import com.merttoptas.productdetail.navigation.productDetail
-import com.merttoptas.profile.navigation.profileScreen
+import com.loodos.category.navigation.categoryScreen
+import com.loodos.home.navigation.HomeNavigationRoute
+import com.loodos.home.navigation.homeScreen
+import com.loodos.home.navigation.navigateToHome
+import com.loodos.login.navigation.LoginNavigationRoute
+import com.loodos.login.navigation.loginScreen
+import com.loodos.productdetail.navigation.navigateToProductDetail
+import com.loodos.productdetail.navigation.productDetail
+import com.loodos.profile.navigation.profileScreen
 
 /**
  * Created by mertcantoptas on 10.03.2023
@@ -22,7 +23,7 @@ import com.merttoptas.profile.navigation.profileScreen
 fun MainNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = LoginNavigationRoute,
+    startDestination: String = HomeNavigationRoute,
 ) {
     NavHost(
         modifier = modifier,

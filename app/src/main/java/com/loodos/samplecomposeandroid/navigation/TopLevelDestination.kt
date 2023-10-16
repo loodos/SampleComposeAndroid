@@ -1,11 +1,11 @@
 package com.loodos.samplecomposeandroid.navigation
 
+import com.loodos.category.navigation.CategoryRoute
 import com.loodos.designsystems.icon.AppIcons
 import com.loodos.designsystems.icon.Icon
+import com.loodos.home.navigation.HomeNavigationRoute
+import com.loodos.profile.navigation.ProfileRoute
 import com.loodos.samplecomposeandroid.R
-import com.merttoptas.category.navigation.CategoryRoute
-import com.merttoptas.home.navigation.HomeNavigationRoute
-import com.merttoptas.profile.navigation.ProfileRoute
 
 enum class TopLevelDestination(
     val route: String,

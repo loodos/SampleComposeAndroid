@@ -14,7 +14,7 @@ enum class FlavorDimension {
 // purposes, or from a production backend server which supplies up-to-date, real content.
 // These two product flavors reflect this behaviour.
 enum class Flavor (val dimension : FlavorDimension, val applicationIdSuffix : String? = null) {
-    DEMO(FlavorDimension.CONTENT_TYPE),
+    DEMO(FlavorDimension.CONTENT_TYPE, ".demo"),
     PROD(FlavorDimension.CONTENT_TYPE, ".prod")
 }
 

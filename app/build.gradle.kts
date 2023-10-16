@@ -25,11 +25,6 @@ android {
         }
     }
 
-    buildTypes {
-        debug {
-            applicationIdSuffix = "debug"
-        }
-    }
 
     packagingOptions {
         resources {
