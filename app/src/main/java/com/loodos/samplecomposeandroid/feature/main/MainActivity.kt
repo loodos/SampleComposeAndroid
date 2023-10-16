@@ -19,6 +19,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.metrics.performance.JankStats
 import com.loodos.data.util.NetworkMonitor
+import com.loodos.designsystems.theme.SampleComposeAndroidTheme
 import com.loodos.samplecomposeandroid.feature.appstate.MainApp
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -87,7 +88,7 @@ class MainActivity : ComponentActivity() {
 
     private fun setContent() {
         setContent {
-            com.loodos.designsystems.theme.SampleComposeAndroidTheme {
+            SampleComposeAndroidTheme {
                 MainApp(networkMonitor = networkMonitor)
             }
         }

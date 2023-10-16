@@ -23,6 +23,8 @@ dependencies {
     api(libs.androidx.compose.ui.tooling.preview)
     api(libs.androidx.compose.ui.util)
     api(libs.androidx.metrics)
+    api(libs.androidx.tracing.ktx)
+
 
     debugApi(libs.androidx.compose.ui.tooling)
 

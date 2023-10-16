@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.loodos.designsystems.component.CustomTextField
+import com.loodos.designsystems.component.MainAppScaffold
 import com.loodos.samplecomposeandroid.feature.login.R
 import de.palm.composestateevents.EventEffect
 
@@ -73,7 +74,7 @@ fun LoginScreen(
     modifier: Modifier = Modifier,
     onLoginClicked: () -> Unit,
 ) {
-    com.loodos.designsystems.component.MainAppScaffold(
+    MainAppScaffold(
         modifier = modifier.fillMaxSize(),
     ) {
         Content(

@@ -28,7 +28,7 @@ internal fun Project.configureAndroidCompose(
 
 
         dependencies {
-            val bom = libs.findLibrary("compose-bom").get()
+            val bom = libs.findLibrary("android-compose-bom").get()
             add("implementation", platform(bom))
             add("androidTestImplementation", platform(bom))
             // Add ComponentActivity to debug manifest
